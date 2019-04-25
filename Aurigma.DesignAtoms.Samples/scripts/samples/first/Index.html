@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Design Atoms Sample</title>
+    <link type="text/css" rel="stylesheet" href="/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/demo.css" />
+    <script src="/scripts/bundles/index.js" charset="utf-8"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__section header__section-logo"><a href="https://customerscanvas.com" target="_blank"><img class="header__logo" src="/styles/logo.svg" alt="logo" /></a></div>
+    </header>
+    <main class="main">
+        <div id="viewer-wrapper">
+            <div id="viewer"></div>
+            <div id="sidebar">
+                <div id="all-text-editor" class="all-text-editor">
+                    <div class="all-text-editor__label"> Change color for all texts </div>
+                    <input class="all-text-editor__color" type="color" placeholder="font color" />
+                    <button class="all-text-editor__button">Apply</button>
+                </div>
+                <div id="mockup-editor" class="mockup-editor">
+                    <div class="mockup-editor__label"> Change shape </div>
+                    <select class="mockup-editor__select">
+                        <option value="test-page-square">Square</option>
+                        <option value="test-page-round">Round</option>
+                    </select>
+                    <button class="mockup-editor__button">Apply</button>
+                </div>
+                <div id="text-editor" class="text-editor hidden">
+                    <div class="text-editor__label"> Change current text element</div>
+                    <div class="text-editor__line">
+                        <select class="text-editor__select">
+                            <option value="Roboto-Regular">Roboto-Regular</option>
+                            <option value="Roboto-Bold">Roboto-Bold</option>
+                            <option value="Montserrat-Bold">Montserrat-Bold</option>
+                            <option value="Montserrat-Regular">Montserrat-Regular</option>
+                        </select>
+                        <input class="text-editor__size" type="number" placeholder="font size" />
+                        <input class="text-editor__color" type="color" placeholder="font color" />
+                    </div>
+                    <textarea rows="5" class="text-editor__textarea"></textarea>
+                    <button class="text-editor__button">Apply</button>
+                </div>
+            </div>
+        </div>
+        </main>
+</body>
+</html>
