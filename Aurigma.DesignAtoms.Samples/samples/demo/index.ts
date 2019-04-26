@@ -108,10 +108,10 @@ function initCanvas(canvas: Canvas) {
 const backendUrl = "http://localhost:60669";
 const holderId = "#viewer";
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
     const holder = document.querySelector(holderId) as HTMLDivElement;
     (<any>window).designAtoms = {
-        designAtomsBackendUrl: "http://localhost:60669",
+        designAtomsBackendUrl: backendUrl,
     }
     InitViewer(backendUrl, holder);
 
@@ -167,4 +167,4 @@ window.onload = () => {
         helper.updateMockup(mockupEditor.querySelector('.mockup-editor__select')['selectedOptions'][0]['value']);
     }
 
-};
+});

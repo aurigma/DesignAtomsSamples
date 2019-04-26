@@ -74,6 +74,11 @@ a:hover {
     padding: 9px 16px;
     width: 120px;
 }
+.all-text-editor__button:hover,
+.text-editor__button:hover,
+.mockup-editor__button:hover {
+    border: 1px solid #BBBBBB;
+}
 .text-editor,
 .mockup-editor,
 .all-text-editor {
