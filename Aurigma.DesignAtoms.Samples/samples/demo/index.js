@@ -81,10 +81,10 @@ function initCanvas(canvas) {
 }
 var backendUrl = "http://localhost:60669";
 var holderId = "#viewer";
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
     var holder = document.querySelector(holderId);
     window.designAtoms = {
-        designAtomsBackendUrl: "http://localhost:60669",
+        designAtomsBackendUrl: backendUrl,
     };
     InitViewer(backendUrl, holder);
     var helper = new Helper_1.Helper(window.designAtoms.viewer, window.designAtoms.designAtomsBackendUrl);
@@ -132,4 +132,4 @@ window.onload = function () {
     function mockupChange() {
         helper.updateMockup(mockupEditor.querySelector('.mockup-editor__select')['selectedOptions'][0]['value']);
     }
-};
+});
