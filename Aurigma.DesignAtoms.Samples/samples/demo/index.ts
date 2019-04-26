@@ -58,7 +58,7 @@ function InitSurface(surface: Surface, backendUrl: string) {
         titleText = assignProperties(new PlainTextItem(), {
             name: "header",
             baselineLocation: new PointF(95.2, 321.5),
-            text: "Just about any kind\n\rof print product",
+            text: "Just about any kind\nof print product",
             color: new RgbColor("#000000"),
             font: new BaseTextItem.FontSettings("Montserrat-Bold", 24),
             alignment: TextAlignment.Left,
@@ -71,7 +71,7 @@ function InitSurface(surface: Surface, backendUrl: string) {
         mainText = assignProperties(new BoundedTextItem(), {
             name: "body",
             textRectangle: new RectangleF(94.8, 372.15, 301.5, 197.1),
-            text: "<p><span>Many packaged web-to-print solutions on the market today work well enough, but they can also be rigid and prevent the customizability that many printers want. Customer’s Canvas provides an opportunity for printers to get a solution that is better tailored to their internal workflows and give their customers a more unique and intuitive experience.</span></p>",
+            text: "Many packaged web-to-print solutions on the market today work well enough, but they can also be rigid and prevent the customizability that many printers want. Customer's Canvas provides an opportunity for printers to get a solution that is better tailored to their internal workflows and give their customers a more unique and intuitive experience.",
             color: new RgbColor("#000000"),
             font: new BaseTextItem.FontSettings("Montserrat-Regular", 15),
             alignment: TextAlignment.Left,
@@ -126,7 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
     _viewer.canvas.add_selectedItemHandlerChanged((e) => {
         let selectedTypes = _viewer.selectedItems.map((item) => item.type);
         let selectedItem = _viewer.selectedItems[0] as BaseTextItem;
-        console.log(_viewer.selectedItems.length);
         if (_viewer.selectedItems.length === 1 && (selectedTypes.indexOf("PlainTextItem") >= 0 || selectedTypes.indexOf("BoundedTextItem") >= 0)) {
             textEditor.classList.remove('hidden');
             textEditor.querySelector('.text-editor__textarea')['value'] = selectedItem.text;
