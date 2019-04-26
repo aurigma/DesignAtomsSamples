@@ -1,0 +1,29 @@
+{
+  "name": "@aurigma/design-atoms-samples",
+  "private": "true",
+  "version": "5.0.0",
+  "description": "Samples for the Design Atoms Framework",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "node_modules\\.bin\\webpack.cmd --config webpack.config.js --mode development --display-error-details",
+    "build:production": "node_modules\\.bin\\webpack.cmd --config webpack.config.js --mode production --display-error-details"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "http-server": "^0.11.1",
+    "ts-loader": "^5.4.3",
+    "typescript": "3.0.1",
+    "webpack": "4.2.0",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "@aurigma/design-atoms": "5.0.0"
+  },
+  "-vs-binding": {
+    "AfterBuild": [
+      "build:dev"
+    ]
+  }
+}
