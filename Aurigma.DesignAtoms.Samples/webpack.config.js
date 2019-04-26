@@ -1,24 +1,35 @@
 const webpack = require("webpack");
 const path = require("path");
+const fs = require("fs");
 
-const indexPath = path.join(__dirname, "scripts");
+const samples = fs.readdirSync(path.join(__dirname, 'samples')).map(folder => {
+    return {
+        name: folder,
+        file: path.join(__dirname, 'samples', folder, 'index.ts')
+    };
+}).reduce(function (acc, cur, i) {
+    acc[cur.name] = cur.file;
+    return acc;
+}, {});
 
 module.exports = {
-    entry: {
-        "index": path.join(indexPath, "index.js")
-    },
+    entry: samples,
 
     output: {
         path: path.join(__dirname, "scripts", "Bundles"),
         pathinfo: true,
-        filename: "[name].js",
-        chunkFilename: "[name]-chunk.js"
+        filename: "index.js"
     },
 
     resolve: {
-        extensions: [".js", ".json", ".css"],
+        extensions: [".ts",".js", ".json", ".css"],
         modules: [
             path.join(__dirname, "node_modules")
+        ]
+    },
+    module: {
+        rules: [
+            { test: /\.ts$/, use: 'ts-loader' }
         ]
     },
 

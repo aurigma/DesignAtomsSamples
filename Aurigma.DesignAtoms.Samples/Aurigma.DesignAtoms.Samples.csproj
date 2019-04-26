@@ -24,7 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -144,8 +144,8 @@
     <Content Include="assets\image.jpg" />
     <Content Include="assets\test-page.jpg" />
     <Content Include="Index.html" />
-    <Content Include="scripts\samples\first\Index.html" />
-    <Content Include="scripts\samples\first\style.css" />
+    <Content Include="samples\demo\Index.html" />
+    <Content Include="samples\demo\style.css" />
     <Content Include="styles\demo.css" />
     <Content Include="styles\logo.svg" />
     <Content Include="styles\style.css" />
@@ -163,7 +163,7 @@
   <ItemGroup>
     <Content Include="package.json" />
     <None Include="packages.config" />
-    <Content Include="scripts\tsconfig.json" />
+    <Content Include="tsconfig.json" />
     <None Include="readme.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -176,12 +176,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="scripts\samples\first\index.ts" />
-    <TypeScriptCompile Include="scripts\Demo.ts">
+    <TypeScriptCompile Include="samples\demo\index.ts" />
+    <TypeScriptCompile Include="scripts\Helper.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="scripts\index.ts" />
-    <TypeScriptCompile Include="scripts\InitViewer.ts" />
     <TypeScriptCompile Include="scripts\IResourceUrlMap.ts" />
     <TypeScriptCompile Include="scripts\Utils.ts" />
     <TypeScriptCompile Include="scripts\Window.d.ts" />
@@ -220,6 +218,9 @@
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets'))" />
   </Target>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>npm run build:dev</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

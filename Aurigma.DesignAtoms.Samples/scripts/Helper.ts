@@ -7,11 +7,11 @@ import { RectangleF, PointF } from "@aurigma/design-atoms/Math";
 import * as $ from "jquery";
 import { loadImage } from "./Utils";
 import { IResourceUrlMap } from "./IResourceUrlMap";
-import { RgbColor } from "@aurigma/design-atoms/Color";
+import { RgbColor } from "@aurigma/design-atoms/Colors";
 import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
 import { Product, Surface, PrintArea, SafetyLine, SurfaceContainer, MockupContainer } from "@aurigma/design-atoms/Model/Product";
 
-export class Demo {
+export class Helper {
 
     constructor(private readonly _viewer: Viewer, private readonly backendUrl: string) {
     }

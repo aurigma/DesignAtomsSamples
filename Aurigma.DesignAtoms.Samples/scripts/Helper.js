@@ -37,15 +37,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Items_1 = require("@aurigma/design-atoms/Model/Product/Items");
 var Math_1 = require("@aurigma/design-atoms/Math");
-var Color_1 = require("@aurigma/design-atoms/Color");
+var Colors_1 = require("@aurigma/design-atoms/Colors");
 var Utils_1 = require("@aurigma/design-atoms/Utils/Utils");
 var Product_1 = require("@aurigma/design-atoms/Model/Product");
-var Demo = /** @class */ (function () {
-    function Demo(_viewer, backendUrl) {
+var Helper = /** @class */ (function () {
+    function Helper(_viewer, backendUrl) {
         this._viewer = _viewer;
         this.backendUrl = backendUrl;
     }
-    Demo.prototype.updateText = function (name, text) {
+    Helper.prototype.updateText = function (name, text) {
         return __awaiter(this, void 0, void 0, function () {
             var textItem;
             return __generator(this, function (_a) {
@@ -55,7 +55,7 @@ var Demo = /** @class */ (function () {
             });
         });
     };
-    Demo.prototype.updateFontSize = function (name, size) {
+    Helper.prototype.updateFontSize = function (name, size) {
         return __awaiter(this, void 0, void 0, function () {
             var textItem;
             return __generator(this, function (_a) {
@@ -65,7 +65,7 @@ var Demo = /** @class */ (function () {
             });
         });
     };
-    Demo.prototype.updateFontName = function (name, fontName) {
+    Helper.prototype.updateFontName = function (name, fontName) {
         return __awaiter(this, void 0, void 0, function () {
             var textItem;
             return __generator(this, function (_a) {
@@ -75,17 +75,17 @@ var Demo = /** @class */ (function () {
             });
         });
     };
-    Demo.prototype.updateFontColor = function (name, color) {
+    Helper.prototype.updateFontColor = function (name, color) {
         return __awaiter(this, void 0, void 0, function () {
             var textItem;
             return __generator(this, function (_a) {
                 textItem = this._viewer.surface.containers.first().items.first(function (i) { return i.name === name; });
-                textItem.color = new Color_1.RgbColor(color);
+                textItem.color = new Colors_1.RgbColor(color);
                 return [2 /*return*/];
             });
         });
     };
-    Demo.prototype.updateMockup = function (mockup) {
+    Helper.prototype.updateMockup = function (mockup) {
         return __awaiter(this, void 0, void 0, function () {
             var mockupImg, mockupContainer;
             return __generator(this, function (_a) {
@@ -100,6 +100,6 @@ var Demo = /** @class */ (function () {
             });
         });
     };
-    return Demo;
+    return Helper;
 }());
-exports.Demo = Demo;
+exports.Helper = Helper;
