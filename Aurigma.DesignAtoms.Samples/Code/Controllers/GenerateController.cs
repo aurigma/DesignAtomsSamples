@@ -31,14 +31,18 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
             {
                 Surfaces =
                 {
-                    new Surface(400, 300)
+                    new Surface(491.5f, 667.2f)
                     {
-                        PrintAreas = { new PrintArea(new RectangleF(0, 0, 400, 300))},
+                        PrintAreas = { new PrintArea(new RectangleF(0, 0, 419.5f, 595.2f))},
                         Containers =
                         {
                             new SurfaceContainer(new Collection<BaseItem>
                             {
-                                new RectangleItem(100, 100, 200, 100)
+                                new PlainTextItem("Just about any kind\nof print product",new PointF(95.2f, 321.5f),"Montserrat-Bold",24),
+                                new BoundedTextItem("Many packaged web-to-print solutions on the market today work well enough, but they can also be rigid and prevent the customizability that many printers want. Customer's Canvas provides an opportunity for printers to get a solution that is better tailored to their internal workflows and give their customers a more unique and intuitive experience.",new RectangleF(94.8f, 372.15f, 301.5f, 197.1f),"Montserrat-Regular",15),
+                                new ImageItem(new GraphicsMill.Bitmap(System.Web.Hosting.HostingEnvironment.MapPath("~/assets/image.jpg")), new PointF(58.8f , 60) , 301.9f, 174.48f)
+                                
+                                
                             })
                             {
                                 Name = Utils.MainContainerName

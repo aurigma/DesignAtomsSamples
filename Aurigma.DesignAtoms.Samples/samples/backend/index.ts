@@ -45,47 +45,19 @@ function initNewSurface(surface: Surface, backendUrl: string) {
         mainContainer = assignProperties(new SurfaceContainer(), { name: "main" })
     ]);
 
-    let mockupImg = assignProperties(new ImageItem(), {
-        sourceRectangle: new RectangleF(0, 0, surface.width, surface.height),
-        source: new ImageItem.ImageSource(null, backendUrl + "/assets/test-page-square.png")
-    });
-
-    let mockupContainer = new MockupContainer([mockupImg]);
-
-    surface.mockup.overContainers.add(mockupContainer);
-
-    let titleText: PlainTextItem;
+    let titleText: BoundedTextItem;
     mainContainer.items.add(
-        titleText = assignProperties(new PlainTextItem(), {
+        titleText = assignProperties(new BoundedTextItem(), {
             name: "header",
-            baselineLocation: new PointF(95.2, 321.5),
-            text: "Just about any kind\nof print product",
+            textRectangle: new RectangleF(36, 36, 419.5, 595.2),
+            text: "Click \"Load from Server\" to fetch a product from server",
             color: new RgbColor("#000000"),
             font: new BaseTextItem.FontSettings("Montserrat-Bold", 24),
-            alignment: TextAlignment.Left,
-            locked: false
+            alignment: TextAlignment.Center,
+            verticalAlignment: TextVerticalAlignment.Center,
+            locked: true
         })
     );
-
-    let mainText: BoundedTextItem;
-    mainContainer.items.add(
-        mainText = assignProperties(new BoundedTextItem(), {
-            name: "body",
-            textRectangle: new RectangleF(94.8, 372.15, 301.5, 197.1),
-            text: "Many packaged web-to-print solutions on the market today work well enough, but they can also be rigid and prevent the customizability that many printers want. Customer's Canvas provides an opportunity for printers to get a solution that is better tailored to their internal workflows and give their customers a more unique and intuitive experience.",
-            color: new RgbColor("#000000"),
-            font: new BaseTextItem.FontSettings("Montserrat-Regular", 15),
-            alignment: TextAlignment.Left,
-            locked: false
-        })
-    );
-
-    let image = assignProperties(new ImageItem(), {
-        sourceRectangle: new RectangleF(58.8 + 36, 60 + 36, 301.9, 174.48),
-        source: new ImageItem.ImageSource(null, backendUrl + "/assets/image.jpg"),
-        locked: false
-    });
-    mainContainer.items.add(image);
 }
 
 function initCanvas(canvas: Canvas) {

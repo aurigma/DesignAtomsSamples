@@ -687,7 +687,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!******************************************************************!*\
   !*** ./node_modules/@aurigma/design-atoms/ItemHandlers/index.js ***!
   \******************************************************************/
-/*! exports provided: AutoScaledTextItemHandler, BarcodeItemHandler, BaseRectangleItemHandler, BaseTextItemHandler, TextImageData, BoundedTextItemHandler, CurvedTextItemHandler, HandlerFactoryByItem, ImageEffect, ImageItemHandler, ItemHandlersCollection, LineItemHandler, PlaceholderItemHandler, PlainTextItemHandler, RectangleItemHandler, ShadowSettings, ShapeHandlerData, ShapeItemHandler, StrokeSettings, WrappingMode, BarcodeHandlerData, BaseTextHandlerData, ContentItemHandler, ContentType, HandlerFactoryByName, ImageHandlerData, ItemHandler, ItemHandlerData, PlaceholderHandlerData */
+/*! exports provided: AutoScaledTextItemHandler, BarcodeItemHandler, BaseRectangleItemHandler, BaseTextItemHandler, TextImageData, BoundedTextItemHandler, CurvedTextItemHandler, HandlerFactoryByItem, ImageEffect, ImageHandlerData, ImageItemHandler, ItemHandlersCollection, LineItemHandler, PlaceholderItemHandler, PlainTextItemHandler, RectangleItemHandler, ShadowSettings, ShapeHandlerData, ShapeItemHandler, StrokeSettings, WrappingMode, BarcodeHandlerData, BaseTextHandlerData, ContentItemHandler, ContentType, HandlerFactoryByName, ItemHandler, ItemHandlerData, PlaceholderHandlerData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
