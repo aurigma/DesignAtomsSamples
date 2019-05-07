@@ -18,7 +18,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, "scripts", "Bundles"),
         pathinfo: true,
-        filename: "index.js"
+        filename: "[name].js"
     },
 
     resolve: {
