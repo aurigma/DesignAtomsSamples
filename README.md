@@ -38,7 +38,24 @@ The Aurigma.DesignAtoms.Samples project consists the following important parts:
 - **index.html** - a startup page, contains links to the sample apps.
 - **Global.asax.cs** - contains a code which adds endpoints from the Aurigma.DesignAtoms module to your project. If you integrate Design Atoms to your own ASP.NET application, you need to copy the code from `Application_Start` to your project. See the comment in the code for more details. 
 
-The most important code is located in subfolders of the **samples** folder. These folders may contain its own readme files with more instructions on how it works.
+The most important code is located in subfolders of the **samples** folder. These folders may contain its own readme files with more instructions on how it works. So far the following samples are available.
+
+### demo
+
+A kind of a quick start demo. Here you can see an example how to work with front end library and CanvasViewer control. The following features are demonstrated: 
+
+- Constructing a design on a client side
+- Changing color of all items
+- Changing font settings of a currently selected item
+- Reading item properties of a currently selected item
+
+### backend
+
+An example how to use back end and front end libraries together. It demonstrates the following features: 
+
+- Constructing a design on a server side
+- Sending the design from a server to a client and backward
+- Rendering a design as JPEG and PDF on the server
 
 ## Questions? 
 
