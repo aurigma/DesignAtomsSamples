@@ -144,6 +144,8 @@
     <Content Include="assets\image.jpg" />
     <Content Include="assets\test-page.jpg" />
     <Content Include="Index.html" />
+    <Content Include="samples\backend\Index.html" />
+    <Content Include="samples\backend\style.css" />
     <Content Include="samples\demo\Index.html" />
     <Content Include="samples\demo\style.css" />
     <Content Include="styles\demo.css" />
@@ -155,6 +157,8 @@
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Controllers\GenerateController.cs" />
+    <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,6 +180,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="samples\backend\index.ts" />
     <TypeScriptCompile Include="samples\demo\index.ts" />
     <TypeScriptCompile Include="scripts\Helper.ts">
       <SubType>Code</SubType>
@@ -184,6 +189,7 @@
     <TypeScriptCompile Include="scripts\Utils.ts" />
     <TypeScriptCompile Include="scripts\Window.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -261,7 +267,7 @@
     </ItemGroup>
     <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
     <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
-</Target>
+  </Target>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" />
   <PropertyGroup>
     <PreBuildEvent>npm run build:dev</PreBuildEvent>
