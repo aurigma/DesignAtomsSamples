@@ -31,6 +31,12 @@ namespace Aurigma.DesignAtoms.Samples
                 routeTemplate: "api/Render/{format}",
                 defaults: new { controller = "Render", format = "Pdf" }
             );
+
+            RouteTable.Routes.MapHttpRoute(
+                name: "StateApi",
+                routeTemplate: "api/State/{action}/{id}",
+                defaults: new { controller = "State" }
+            );
         }
     }
 }
