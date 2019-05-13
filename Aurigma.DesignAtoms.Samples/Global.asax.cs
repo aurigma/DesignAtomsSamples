@@ -35,7 +35,7 @@ namespace Aurigma.DesignAtoms.Samples
             RouteTable.Routes.MapHttpRoute(
                 name: "StateApi",
                 routeTemplate: "api/State/{action}/{id}",
-                defaults: new { controller = "State" }
+                defaults: new { controller = "State", id = RouteParameter.Optional }
             );
         }
     }

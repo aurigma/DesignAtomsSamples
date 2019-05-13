@@ -37,6 +37,16 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
                 Directory.CreateDirectory(_statesFolderPath);
         }
 
+        [HttpGet]
+        public HttpResponseMessage allStates()
+        {
+            var states = Directory.EnumerateFiles(System.Web.Hosting.HostingEnvironment.MapPath(_statesFolder));
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(states), Encoding.UTF8, "application/json")
+            };
+        }
+
         [HttpPost]
         public HttpResponseMessage Serialize([FromBody] RequestData data, string id)
         {
