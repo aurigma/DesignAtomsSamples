@@ -159,6 +159,7 @@
   <ItemGroup>
     <Compile Include="Code\Controllers\GenerateController.cs" />
     <Compile Include="Code\Controllers\RenderController.cs" />
+    <Compile Include="Code\Controllers\StateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

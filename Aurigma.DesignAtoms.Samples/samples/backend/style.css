@@ -1,5 +1,37 @@
-﻿body {
+﻿body {}
+
+.sidebar__input {
+    background: #FFFFFF;
+    border: 1px solid #D6D7DA;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.25px;
+    color: #555555;
+    padding: 9px 16px;
+    margin-right: 16px;
+    flex-grow: 1;
 }
+
+.sidebar__select {
+    background: #FFFFFF;
+    border: 1px solid #D6D7DA;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.25px;
+    color: #555555;
+    padding: 8px 16px;
+    margin-right: 16px;
+    flex-grow: 1;
+}
+
 .sidebar__button {
     background: #FFFFFF;
     border: 1px solid #D6D7DA;
@@ -13,9 +45,12 @@
     letter-spacing: 0.25px;
     color: #555555;
     padding: 9px 16px;
-    width: 120px;
+    margin-right: 16px;
+    min-width: 120px;
 }
+
 .sidebar__section {
-    width:100%;
+    width: 100%;
     margin: 0 0 16px 0;
+    display: flex;
 }

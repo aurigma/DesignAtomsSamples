@@ -15,6 +15,11 @@ using Newtonsoft.Json;
 
 namespace Aurigma.DesignAtoms.Samples.Code.Controllers
 {
+    public class TestItem
+    {
+        public string title { get; set; }
+        public string url { get; set; }
+    }
     public class GenerateController : ApiController
     {
         private readonly ProductJsonConverter _productJsonConverter;

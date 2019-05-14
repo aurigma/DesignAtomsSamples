@@ -50,7 +50,7 @@ function initNewSurface(surface: Surface, backendUrl: string) {
         titleText = assignProperties(new BoundedTextItem(), {
             name: "header",
             textRectangle: new RectangleF(36, 36, 419.5, 595.2),
-            text: "Click \"Load from Server\" to fetch a product from server",
+            text: "please wait",
             color: new RgbColor("#000000"),
             font: new BaseTextItem.FontSettings("Montserrat-Bold", 24),
             alignment: TextAlignment.Center,
@@ -91,70 +91,52 @@ document.addEventListener("DOMContentLoaded", () => {
     var helper = new Helper((<any>window).designAtoms.viewer, (<any>window).designAtoms.designAtomsBackendUrl);
     (<any>window).designAtoms["helper"] = helper;
 
-    const _viewer = (<any>window).designAtoms.viewer as Viewer;
-    const demoButton = document.getElementById('demo-product');
-    const imageButton = document.getElementById('render-image');
-    const hiresButton = document.getElementById('render-hires');
-    const serializer = new JsonProductSerializer();
-    function downloadUrl(url, file) {
-        let link = document.createElement("a");
-        link.style.position = "absolute";
-        link.style.top = "-99999999";
-        link.style.left = "-9999999";
-        link.style.visibility= "hidden";
-        link.download = file;
-        link.href = url;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+    const saveStateButton = document.getElementById('save-state') as HTMLButtonElement;
+    const stateNameInput = document.getElementById('save-state-name') as HTMLInputElement;
+    const loadStateButton = document.getElementById('load-state') as HTMLButtonElement;
+    const stateSelect = document.getElementById("select-state") as HTMLSelectElement;
+    const imageButton = document.getElementById('render-image') as HTMLButtonElement;
+    const hiresButton = document.getElementById('render-hires') as HTMLButtonElement;
 
-    demoButton.addEventListener('click', () => {
-        fetch('/api/Generate/DemoProduct')
+    function addOptions(select: HTMLSelectElement, options: Array<string>) {
+        options.map(option => {
+            var optionNode = document.createElement("option");
+            optionNode.text = option;
+            optionNode.value = option;
+            select.add(optionNode);
+        })
+    }
+    function updateStates() {
+        while (stateSelect.options.length > 0) {                
+            stateSelect.remove(0);
+        }   
+        fetch('/api/State/AllStates')
             .then(data => data.json())
             .then(data => {
-                const product = serializer.deserialize(data);
-                _viewer.surface = product.surfaces.get(0);
+                let states = data.map((state: string) => {
+                    return state.substring(state.lastIndexOf('\\') + 1, state.lastIndexOf('.'))
+                });
+                addOptions(stateSelect, states);
             });
+    }
 
+    helper.updateProductViewer("DemoProduct");
+    updateStates();
+
+    saveStateButton.addEventListener('click', () => {
+        let name = stateNameInput.value;
+        helper.saveState(name);
+        updateStates();
+    })
+    loadStateButton.addEventListener('click', () => {
+        let name = stateSelect.value;
+        helper.loadState(name);
     })
     imageButton.addEventListener('click', () => {
-        const surface = _viewer.surface;
-        const product = new Product([surface]);
-        const req = serializer.serialize(product);
-        fetch('/api/Render/jpg', {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: `{ product: ${req} }`
-        })
-            .then(data => data.blob())
-            .then(data => {
-                var blobUrl = URL.createObjectURL(data);
-                downloadUrl(blobUrl, 'preview.jpg');
-                console.log(data)
-            });
+        helper.renderImage();
     })
     hiresButton.addEventListener('click', () => {
-        const surface = _viewer.surface;
-        const product = new Product([surface]);
-        const req = serializer.serialize(product);
-        fetch('/api/Render/pdf', {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: `{ product: ${req} }`
-        })
-            .then(data => data.blob())
-            .then(data => {
-                var blobUrl = URL.createObjectURL(data);
-                downloadUrl(blobUrl, 'hires.pdf');
-                console.log(data)
-            });
+        helper.renderHiRes();
     })
 
 });
