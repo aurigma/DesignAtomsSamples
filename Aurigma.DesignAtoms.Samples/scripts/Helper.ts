@@ -1,15 +1,11 @@
 ﻿import { Viewer } from "@aurigma/design-atoms/Viewer/Viewer";
-import { BoundedTextItemHandler, BarcodeItemHandler, BaseRectangleItemHandler } from "@aurigma/design-atoms/ItemHandlers";
-import { ImageItem, PlaceholderItem, BarcodeItem, BarcodeFormat, BoundedTextItem, BaseTextItem, FontSettings } from "@aurigma/design-atoms/Model/Product/Items";
-import { ZoomMode } from "@aurigma/design-atoms/Viewer/ZoomMode";
+import { ImageItem, BaseTextItem } from "@aurigma/design-atoms/Model/Product/Items";
+import { Canvas } from "@aurigma/design-atoms/Canvas";
 import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Serializer/JsonProductSerializer";
-import { RectangleF, PointF } from "@aurigma/design-atoms/Math";
-import * as $ from "jquery";
-import { loadImage } from "./Utils";
-import { IResourceUrlMap } from "./IResourceUrlMap";
+import { RectangleF } from "@aurigma/design-atoms/Math";
 import { RgbColor } from "@aurigma/design-atoms/Colors";
 import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
-import { Product, Surface, PrintArea, SafetyLine, SurfaceContainer, MockupContainer } from "@aurigma/design-atoms/Model/Product";
+import { Product, MockupContainer } from "@aurigma/design-atoms/Model/Product";
 
 function downloadUrl(url, file) {
     let link = document.createElement("a");
@@ -68,6 +64,65 @@ export class Helper {
         this._viewer.surface.mockup.overContainers.removeAt(0);
         this._viewer.surface.mockup.overContainers.add(mockupContainer);
     }
+
+    static render(url: string, product: Product, fileName: string) {
+        const serializedProduct = new JsonProductSerializer().serialize(product);
+        fetch(url, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: `{product: ${serializedProduct}}`
+            })
+            .then(response => response.blob())
+            .then(data => Helper.downloadUrl(URL.createObjectURL(data), fileName));
+    }
+
+    static downloadUrl = (url: string, fileName: string) => {
+        downloadUrl(url, fileName);
+    }
+
+    static configureCanvas(canvas: Canvas) {
+        canvas.rotationGripColor = "rgb(255, 255, 255)";
+        canvas.rotationGripLineColor = "rgb(48, 194, 255)";
+        canvas.rotationGripLineLength = 10;
+        canvas.rotationGripSize = 6;
+
+        canvas.selectionColor = "rgb(48, 194, 255)";
+        canvas.selectionWidth = 1;
+        canvas.loadingImageUrl = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAUCAYAAABmvqYOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwVJREFUeNqclE9oE1EQxmeTLGnatGtocqhR04MeClUMVWupJyO5iBTBgAcvIojiqUUoeNOLh0I9Fk9qwYsHL+qhiOCf5CJiMFIUQqxJiAk2aU1MN2k3TfxmfRvW2NjYBz925+3svHnfzHvSzMwM7WBcB1/A4385WToMtgvMmuxb4KzJnt3qJ1uHwV8AD3gPTmqa9hHP3bIs38XzOzgH9oLQ/wT3gSS4AW4j6JTL5dLsdrvKu15fXz+8urpKWITtq+IfB6hsF5y/fQUPwIjT6cz7fL5WH5XnYrGYarVan4g6TADndpp7wTMwZLFY8oODg/oksv8Lv99P8KmyL3jaSUFZjknQjUGJRIKSySRVKhUqFoukqqoemEe1WiVeHHY3zPPbaW4RBbyE7arIijPTg7ndbgoEArpTJBKhXC7HmpPD4WAf1n4aPATf2mXO28uBoCRJalNgZDs2NtZ0Gh0dbWbPo6urq4jHBZDW5WwTfBFcFE6yMckZokOaTtls9o+fhCyvwGX+1yzLUSHHB24lBJLgfGRzc3Mf7B/0W3yan5+n8fFxwo4oHo/rc6ZCd+O/+zDftWp+DB+nuYeh80u8vwZDcP6MbOuY13fJ2obDYT2Y0UG8ABfbUM9cUG56tV6vLwwPDydsNn09DcVRUqlUfz6fH2Ef2M9l1kUE48EHCIeK1tbWKJPJKJiXxc73c7dZg8FgDS8NfDjUaDQ0bis8rRsbG+W+vj5ruVxOYuE7tVrtIJ51o3PgQ5CMlpeXaWVlRUEx7wmte8EjI/Mz4Dgy1gqFAoVCIfJ6vRSNRuV0Oh1XFEVGu00gaRekKAEX11IU2g3teUPcJT+55cFU2z5HMLNpdMoA2MPdZjQKeANOCLsB6lvdH3wn+LHt05BGm5ubI4/Ho2vZ09NDS0tLA8iM+15radVFky21u5y4oDeh9QK0tHPm0Jt1pFKpxAenjOCfRJGMcaqTe9omrkcJBbqGqk/zcYeOWSzWi7kDCKzQDodZ87d82aMDmocIwa/gvR8UdhL8lwADABtmSFbWE/QHAAAAAElFTkSuQmCC";
+
+        canvas.resizeGripLineColor = "rgb(48, 194, 255)";
+        canvas.resizeGripColor = "rgb(255, 255, 255)";
+        canvas.resizeGripSize = 8;
+
+        canvas.handleButtonCssClass = "cc-icon-placeholder-handle";
+        canvas.doneButtonCssClass = "cc-icon-placeholder-done";
+    }
+
+    static initViewer(backendUrl: string, holderElement: HTMLDivElement) {
+        const viewer = new Viewer({
+            holderElement: holderElement,
+            backendUrl: backendUrl,
+            canvasBackground: { color: "white" }
+        });
+
+        viewer.clearSelectionOnDocumentClick = false;
+        viewer.rulerScale = 0.0138888889; // inches
+
+        Helper.configureCanvas(viewer.canvas);
+
+        return viewer;
+    }
+
+    static async loadProduct(url: string) {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        return new JsonProductSerializer().deserialize(data);
+    }
+
 
     async updateProductViewer(productName: string) {
         fetch(`/api/Generate/${productName}`)

@@ -110,6 +110,43 @@ select {
     border: 2px solid #30C2FF;
 }
 
+.sidebar__button {
+    background: #FFFFFF;
+    border: 1px solid #D6D7DA;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.25px;
+    color: #555555;
+    padding: 9px 16px;
+    width: 120px;
+}
+
+.sidebar__otf__button {
+    background: #FFFFFF;
+    border: 1px solid #D6D7DA;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.25px;
+    color: #555555;
+    padding: 9px 16px;
+    margin-bottom: 2px;
+}
+
+.sidebar__section {
+    width: 100%;
+    margin: 0 0 16px 0;
+}
+
 @media (max-width:450px) {
     html {
         font-size: 4.375vw;

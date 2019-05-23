@@ -289,8 +289,5 @@ __pycache__/
 *.xsd.cs
 
 # js files
-/Aurigma.DesignAtoms.Samples/scripts/Helper.js
-/Aurigma.DesignAtoms.Samples/scripts/IResourceUrlMap.js
-/Aurigma.DesignAtoms.Samples/scripts/Utils.js
-/Aurigma.DesignAtoms.Samples/samples/*/index.js
-/Aurigma.DesignAtoms.Samples/scripts/Bundles/*.js
+Aurigma\.DesignAtoms\.Samples/scripts/**/*.js
+Aurigma\.DesignAtoms\.Samples/samples/**/*.js
