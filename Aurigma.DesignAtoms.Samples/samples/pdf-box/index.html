@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pdf box Sample</title>
+    <link type="text/css" rel="stylesheet" href="/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/demo.css" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+
+    <script src="/scripts/bundles/pdf-box.js"></script>
+</head>
+<header class="header">
+    <div class="header__section header__section-logo"><a href="https://customerscanvas.com" target="_blank"><img class="header__logo" src="/styles/logo.svg" alt="logo" /></a></div>
+</header>
+<body>
+    <div id="viewer-wrapper">
+        <div id="viewer"></div>
+        <div id="sidebar">
+            <div class="text-editor">
+                <div class="text-editor__label">Change Safety Line</div>
+                <div class="flex">
+                    <fieldset id="margin-editor">
+                        <legend>Margin</legend>
+                        <div class="flex margin-item">
+                            <span class="control-label">Left</span>
+                            <input type="number" id="margin-left" class="margin-control" />
+                        </div>
+                        <div class="flex margin-item">
+                            <span class="control-label">Top</span>
+                            <input type="number" id="margin-top" class="margin-control" />
+                        </div>
+                        <div class="flex margin-item">
+                            <span class="control-label">Right</span>
+                            <input type="number" id="margin-right" class="margin-control" />
+                        </div>
+                        <div class="flex margin-item">
+                            <span class="control-label">Bottom</span>
+                            <input type="number" id="margin-bottom" class="margin-control" />
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="pdf-box-editor">
+                        <legend>Pdf Box</legend>
+                        <div class="flex-column-center">
+                            <div class="flex">
+                                <input type="radio" name="pdf-box" value="Crop" />
+                                <span class="control-label">Crop</span>
+                            </div>
+
+                            <div class="flex">
+                                <input type="radio" name="pdf-box" value="Trim" />
+                                <span class="control-label">Trim</span>
+                            </div>
+
+                            <div class="flex">
+                                <input type="radio" name="pdf-box" value="Bleed" />
+                                <span class="control-label">Bleed</span>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </div>
+                
+                <div>
+                    <button id="apply" class="text-editor__button">Apply</button>
+                </div>
+            </div>
+            <div class="sidebar__section">
+                <button id="hi-res" class="sidebar__button">Download PDF</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

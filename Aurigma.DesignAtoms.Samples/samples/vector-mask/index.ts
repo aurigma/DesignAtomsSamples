@@ -35,8 +35,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return;
 
             const itemBounds = item.sourcePath.bounds;
-            item.mask = new ItemMask();
-            item.mask.vectorMask = Path.ellipse(itemBounds.left, itemBounds.top, 40, 40);
+            const mask = new ItemMask();
+            mask.vectorMask = Path.ellipse(itemBounds.left, itemBounds.top, 40, 40);
+
+            item.mask = mask;
         });
 
     document.getElementById("delete-mask")
