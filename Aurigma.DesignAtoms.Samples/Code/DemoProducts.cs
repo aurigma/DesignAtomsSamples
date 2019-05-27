@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.IO;
 using System.Web.Hosting;
 using Aurigma.DesignAtoms.Canvas.Collection;
 using Aurigma.DesignAtoms.Model;
@@ -75,7 +76,7 @@ namespace Aurigma.DesignAtoms.Samples.Code
 
         public static Product CreateVectorMaskProduct()
         {
-            var photo = new GraphicsMill.Bitmap(HostingEnvironment.MapPath("~/assets/photo.jpg"));
+            var photo = new FileInfo(HostingEnvironment.MapPath("~/assets/photo.jpg"));
 
             var items = new System.Collections.ObjectModel.Collection<BaseItem>();
 

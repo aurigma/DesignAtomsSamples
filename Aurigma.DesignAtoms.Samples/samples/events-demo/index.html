@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Item changed Sample</title>
+    <link type="text/css" rel="stylesheet" href="/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/demo.css" />
+    <link type="text/css" rel="stylesheet" href="./style.css"/>
+    <script src="/scripts/bundles/events-demo.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="header__section header__section-logo"><a href="https://customerscanvas.com" target="_blank"><img class="header__logo" src="/styles/logo.svg" alt="logo" /></a></div>
+</header>
+    <div class="editor-wrapper">
+        <div id="viewer-wrapper">
+            <div id="viewer"></div>
+            <div id="sidebar">
+                <div class="sidebar__section">
+                    <button class="sidebar__button" id="add-text">Add text</button>
+                </div>
+                <div id="text-editor" class="text-editor hidden">
+                    <div class="text-editor__label">Change current text element</div>
+                    <div class="text-editor__line">
+                        <select id="available-fonts" class="text-editor__select">
+                            <option value="Roboto-Regular">Roboto-Regular</option>
+                            <option value="Roboto-Bold">Roboto-Bold</option>
+                            <option value="Montserrat-Bold">Montserrat-Bold</option>
+                            <option value="Montserrat-Regular">Montserrat-Regular</option>
+                        </select>
+                        <input class="text-editor__size" type="number" placeholder="Font size"/>
+                        <input class="text-editor__color" type="color" placeholder="Font color"/>
+                    </div>
+                    <textarea rows="5" class="text-editor__textarea"></textarea>
+                    <div class="text-editor-group">
+                        <button id="apply" class="text-editor__button">Apply</button>
+                        <button id="delete" class="text-editor__button">Delete</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="change-log">
+            <div class="text-editor__label">Log information</div>
+            <textarea id="log" rows="10" class="log" disabled></textarea>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,10 +1,7 @@
-﻿import { Viewer } from "@aurigma/design-atoms/Viewer";
-import { Canvas } from "@aurigma/design-atoms/Canvas";
-import { RectangleF, Path } from "@aurigma/design-atoms/Math";
+﻿import { RectangleF, Path } from "@aurigma/design-atoms/Math";
 import { Product, Surface, PrintArea, SurfaceContainer } from "@aurigma/design-atoms/Model/Product";
 import { CurvedTextItem } from "@aurigma/design-atoms/Model/Product/Items";
 import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
-import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Serializer/JsonProductSerializer";
 import { Helper } from "../../scripts/Helper";
 
 const backendUrl = "http://localhost:60669";

@@ -1,4 +1,5 @@
 using System.Drawing;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -42,7 +43,7 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
                             {
                                 new PlainTextItem("Just about any kind\nof print product",new PointF(95.2f, 321.5f),"Montserrat-Bold",24),
                                 new BoundedTextItem("Many packaged web-to-print solutions on the market today work well enough, but they can also be rigid and prevent the customizability that many printers want. Customer's Canvas provides an opportunity for printers to get a solution that is better tailored to their internal workflows and give their customers a more unique and intuitive experience.",new RectangleF(94.8f, 372.15f, 301.5f, 197.1f),"Montserrat-Regular",15),
-                                new ImageItem(new GraphicsMill.Bitmap(System.Web.Hosting.HostingEnvironment.MapPath("~/assets/image.jpg")), new PointF(58.8f , 60) , 301.9f, 174.48f)
+                                new ImageItem(new FileInfo(System.Web.Hosting.HostingEnvironment.MapPath("~/assets/image.jpg")), new PointF(58.8f , 60) , 301.9f, 174.48f)
                                 
                                 
                             })

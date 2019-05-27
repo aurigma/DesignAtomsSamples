@@ -143,9 +143,14 @@
     <Content Include="assets\test-page.jpg" />
     <Content Include="Index.html" />
     <Content Include="samples\backend\Index.html" />
-    <Content Include="samples\backend\style.css" />
+    <Content Include="samples\curved-text\index.html" />
     <Content Include="samples\demo\Index.html" />
     <Content Include="samples\demo\style.css" />
+    <Content Include="samples\events-demo\index.html" />
+    <Content Include="samples\events-demo\style.css" />
+    <Content Include="samples\open-type-feature\index.html" />
+    <Content Include="samples\open-type-feature\style.css" />
+    <Content Include="samples\vector-mask\index.html" />
     <Content Include="styles\demo.css" />
     <Content Include="styles\logo.svg" />
     <Content Include="styles\style.css" />
@@ -158,6 +163,8 @@
     <Compile Include="Code\Controllers\GenerateController.cs" />
     <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Code\Controllers\StateController.cs" />
+    <Compile Include="Code\DemoProducts.cs" />
+    <Compile Include="Code\TextSamples.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,7 +187,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="samples\backend\index.ts" />
+    <TypeScriptCompile Include="samples\curved-text\index.ts" />
     <TypeScriptCompile Include="samples\demo\index.ts" />
+    <TypeScriptCompile Include="samples\events-demo\index.ts" />
+    <TypeScriptCompile Include="samples\open-type-feature\index.ts" />
+    <TypeScriptCompile Include="samples\vector-mask\index.ts" />
     <TypeScriptCompile Include="scripts\Helper.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
