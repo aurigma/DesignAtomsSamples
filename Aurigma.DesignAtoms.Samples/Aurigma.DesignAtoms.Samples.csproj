@@ -143,6 +143,7 @@
     <Content Include="assets\test-page.jpg" />
     <Content Include="Index.html" />
     <Content Include="samples\backend\Index.html" />
+    <Content Include="samples\backend\style.css" />
     <Content Include="samples\curved-text\index.html" />
     <Content Include="samples\demo\Index.html" />
     <Content Include="samples\demo\style.css" />
