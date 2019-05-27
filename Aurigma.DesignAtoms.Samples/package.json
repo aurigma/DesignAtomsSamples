@@ -19,7 +19,7 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "@aurigma/design-atoms": "5.0.0"
+    "@aurigma/design-atoms": "5.0.1"
   },
   "-vs-binding": {
     "AfterBuild": [

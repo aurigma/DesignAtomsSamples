@@ -45,14 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aurigma.DesignAtoms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.DesignAtoms.5.0.0\lib\net45\Aurigma.DesignAtoms.dll</HintPath>
+    <Reference Include="Aurigma.DesignAtoms, Version=5.0.1.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.DesignAtoms.5.0.1\lib\net45\Aurigma.DesignAtoms.dll</HintPath>
     </Reference>
-    <Reference Include="Aurigma.GraphicsMill, Version=10.0.81.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=AMD64">
-      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x64.10.0.81\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
+    <Reference Include="Aurigma.GraphicsMill, Version=10.0.100.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=AMD64">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x64.10.0.100\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
     </Reference>
-    <Reference Include="Aurigma.GraphicsMill.Templates, Version=10.0.81.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.GraphicsMill.Templates.x64.10.0.81\lib\net40\Aurigma.GraphicsMill.Templates.dll</HintPath>
+    <Reference Include="Aurigma.GraphicsMill.Templates, Version=10.0.100.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Templates.x64.10.0.100\lib\net40\Aurigma.GraphicsMill.Templates.dll</HintPath>
     </Reference>
     <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
@@ -127,8 +127,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="tar-cs, Version=5.0.0.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.DesignAtoms.5.0.0\lib\net45\tar-cs.dll</HintPath>
+    <Reference Include="tar-cs, Version=5.0.1.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.DesignAtoms.5.0.1\lib\net45\tar-cs.dll</HintPath>
     </Reference>
     <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
