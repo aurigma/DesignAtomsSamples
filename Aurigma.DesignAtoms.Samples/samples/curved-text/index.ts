@@ -7,6 +7,34 @@ import { Helper } from "../../scripts/Helper";
 const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 
+document.addEventListener("DOMContentLoaded", () => {
+    const holderElement = document.querySelector(holderElementId) as HTMLDivElement;
+
+    const viewer = Helper.initViewer(backendUrl, holderElement);
+
+    (<any>window).designAtoms = {
+        designAtomsBackendUrl: backendUrl,
+        viewer: viewer
+    };
+
+    document.getElementById("preview")
+        .addEventListener("click", async () => await Helper.render(viewer.surface, "preview.jpg"));
+
+    document.getElementById("hi-res")
+        .addEventListener("click", async () => await Helper.render(viewer.surface, "hires.pdf"));
+
+    document.getElementById("load")
+        .addEventListener("click", () => Helper.loadProduct("/api/products/curved-text").then(product => viewer.surface = product.surfaces.get(0)));
+    
+    document.getElementById("add-text")
+        .addEventListener("click", () =>
+            viewer.surface
+            .containers.get(0)
+            .items.add(new CurvedTextItem("Lorem ipsum dolor sit amet, consectetur adipiscing elit", Path.rectangle(150, 200, 90, 90), "ArialMT", 14)));
+
+    viewer.surface = createProduct().surfaces.get(0);
+});
+
 function createProduct() {
     const product = new Product([new Surface()]);
     product.name = "Curved text product";
@@ -23,31 +51,3 @@ function createProduct() {
 
     return product;
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const holderElement = document.querySelector(holderElementId) as HTMLDivElement;
-
-    const viewer = Helper.initViewer(backendUrl, holderElement);
-
-    (<any>window).designAtoms = {
-        designAtomsBackendUrl: backendUrl,
-        viewer: viewer
-    };
-
-    document.getElementById("preview")
-        .addEventListener("click", () => Helper.render("/api/Render/jpg", new Product([viewer.surface]), "preview.jpg"));
-
-    document.getElementById("hi-res")
-        .addEventListener("click", () => Helper.render("/api/Render/pdf", new Product([viewer.surface]), "hires.pdf"));
-
-    document.getElementById("load")
-        .addEventListener("click", () => Helper.loadProduct("/api/products/curved-text").then(product => viewer.surface = product.surfaces.get(0)));
-    
-    document.getElementById("add-text")
-        .addEventListener("click", () =>
-            viewer.surface
-            .containers.get(0)
-            .items.add(new CurvedTextItem("Lorem ipsum dolor sit amet, consectetur adipiscing elit", Path.rectangle(150, 200, 90, 90), "ArialMT", 14)));
-
-    viewer.surface = createProduct().surfaces.get(0);
-});

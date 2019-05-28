@@ -5,7 +5,7 @@ import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Seria
 import { RectangleF } from "@aurigma/design-atoms/Math";
 import { RgbColor } from "@aurigma/design-atoms/Colors";
 import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
-import { Product, MockupContainer } from "@aurigma/design-atoms/Model/Product";
+import { Product, MockupContainer, Surface } from "@aurigma/design-atoms/Model/Product";
 
 function downloadUrl(url, file) {
     let link = document.createElement("a");
@@ -65,18 +65,24 @@ export class Helper {
         this._viewer.surface.mockup.overContainers.add(mockupContainer);
     }
 
-    static render(url: string, product: Product, fileName: string) {
-        const serializedProduct = new JsonProductSerializer().serialize(product);
-        fetch(url, {
+    static async render(surface: Surface, fileName: string) {
+        const url = `/api/Render/${fileName.split(".").pop()}`;
+
+        const serializedProduct = new JsonProductSerializer().serialize(new Product([surface]));
+
+        const response = await fetch(url,
+            {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
                 method: "POST",
                 body: `{product: ${serializedProduct}}`
-            })
-            .then(response => response.blob())
-            .then(data => Helper.downloadUrl(URL.createObjectURL(data), fileName));
+            });
+
+        const blob = await response.blob();
+
+        Helper.downloadUrl(URL.createObjectURL(blob), fileName);
     }
 
     static downloadUrl = (url: string, fileName: string) => {
@@ -132,45 +138,7 @@ export class Helper {
                 this._viewer.surface = product.surfaces.get(0);
             });
     }
-
-    async renderImage() {
-        const surface = this._viewer.surface;
-        const product = new Product([surface]);
-        const req = this._serializer.serialize(product);
-        fetch('/api/Render/jpg', {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: `{ product: ${req} }`
-        })
-            .then(data => data.blob())
-            .then(data => {
-                var blobUrl = URL.createObjectURL(data);
-                downloadUrl(blobUrl, 'preview.jpg');
-            });
-    }
-
-    async renderHiRes() {
-        const surface = this._viewer.surface;
-        const product = new Product([surface]);
-        const req = this._serializer.serialize(product);
-        fetch('/api/Render/pdf', {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: `{ product: ${req} }`
-        })
-            .then(data => data.blob())
-            .then(data => {
-                var blobUrl = URL.createObjectURL(data);
-                downloadUrl(blobUrl, 'hires.pdf');
-            });
-    }
-
+    
     async saveState(id: string) {
         const surface = this._viewer.surface;
         const product = new Product([surface]);

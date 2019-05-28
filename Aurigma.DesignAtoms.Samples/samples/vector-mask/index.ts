@@ -1,5 +1,5 @@
 ﻿import { Path } from "@aurigma/design-atoms/Math";
-import { Product, ItemMask } from "@aurigma/design-atoms/Model/Product";
+import { ItemMask } from "@aurigma/design-atoms/Model/Product";
 import { ShapeItem } from "@aurigma/design-atoms/Model/Product/Items";
 import { Helper } from "../../scripts/Helper";
 
@@ -10,17 +10,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const holderElement = document.querySelector(holderElementId) as HTMLDivElement;
 
     const viewer = Helper.initViewer(backendUrl, holderElement);
-
     (<any>window).designAtoms = {
-        designAtomsBackendUrl: backendUrl,
         viewer: viewer
     };
 
     document.getElementById("preview")
-        .addEventListener("click", () => Helper.render("/api/Render/jpg", new Product([viewer.surface]), "preview.jpg"));
+        .addEventListener("click", async () => await Helper.render(viewer.surface, "preview.jpg"));
 
     document.getElementById("hi-res")
-        .addEventListener("click", () => Helper.render("/api/Render/pdf", new Product([viewer.surface]), "hires.pdf"));
+        .addEventListener("click", async () => await Helper.render(viewer.surface, "hires.pdf"));
 
     document.getElementById("set-mask")
         .addEventListener("click", () => {

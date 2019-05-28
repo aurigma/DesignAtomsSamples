@@ -1,41 +1,10 @@
-﻿import { Viewer } from "@aurigma/design-atoms/Viewer";
-import { Canvas } from "@aurigma/design-atoms/Canvas";
-import { BaseTextItemHandler } from "@aurigma/design-atoms/ItemHandlers";
-import { Product } from "@aurigma/design-atoms/Model/Product";
+﻿import { BaseTextItemHandler } from "@aurigma/design-atoms/ItemHandlers";
 import { Helper } from "../../scripts/Helper";
 
 const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 const sidebarToggleButtonDownClass = "sidebar__toggle__button__down";
 const openTypeFeatureDataSetKey = "otf";
-
-function getOpenTypeFeatureButtons() {
-    return document.querySelectorAll("#otf a");
-}
-
-function changeOtfButtonState(openTypeFeatures: string[]) {
-    const buttons = getOpenTypeFeatureButtons();
-
-    for (let i = 0; i < buttons.length; i++) {
-        const button = buttons[i] as HTMLElement;
-
-        if (openTypeFeatures.find(f => f === button.dataset[openTypeFeatureDataSetKey]) != null) {
-            button.classList.toggle(sidebarToggleButtonDownClass);
-        } else {
-            button.classList.remove(sidebarToggleButtonDownClass);
-        }
-    }
-}
-
-function resetOtfButtonState() {
-    const buttons = getOpenTypeFeatureButtons();
-
-    for (let i = 0; i < buttons.length; i++) {
-        const button = buttons[i] as HTMLElement;
-
-        button.classList.remove(sidebarToggleButtonDownClass);
-    }
-}
 
 document.addEventListener("DOMContentLoaded", async () => {
     const holderElement = document.querySelector(holderElementId) as HTMLDivElement;
@@ -48,10 +17,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     document.getElementById("preview")
-        .addEventListener("click", () => Helper.render("/api/Render/jpg", new Product([viewer.surface]), "preview.jpg"));
+        .addEventListener("click", async () => await Helper.render(viewer.surface, "preview.jpg"));
 
     document.getElementById("hi-res")
-        .addEventListener("click", () => Helper.render("/api/Render/pdf", new Product([viewer.surface]), "hires.pdf"));
+        .addEventListener("click", async () => await Helper.render(viewer.surface, "hires.pdf"));
 
     viewer.canvas.add_selectedItemHandlerChanged(handler => {
         const selectedHandlers = viewer.canvas.get_selectedItemHandlers();
@@ -105,3 +74,31 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     viewer.surface = product.surfaces.get(0);
 });
+
+function getOpenTypeFeatureButtons() {
+    return document.querySelectorAll("#otf a");
+}
+
+function changeOtfButtonState(openTypeFeatures: string[]) {
+    const buttons = getOpenTypeFeatureButtons();
+
+    for (let i = 0; i < buttons.length; i++) {
+        const button = buttons[i] as HTMLElement;
+
+        if (openTypeFeatures.find(f => f === button.dataset[openTypeFeatureDataSetKey]) != null) {
+            button.classList.toggle(sidebarToggleButtonDownClass);
+        } else {
+            button.classList.remove(sidebarToggleButtonDownClass);
+        }
+    }
+}
+
+function resetOtfButtonState() {
+    const buttons = getOpenTypeFeatureButtons();
+
+    for (let i = 0; i < buttons.length; i++) {
+        const button = buttons[i] as HTMLElement;
+
+        button.classList.remove(sidebarToggleButtonDownClass);
+    }
+}

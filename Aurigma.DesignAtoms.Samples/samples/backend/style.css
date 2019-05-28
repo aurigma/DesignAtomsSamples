@@ -28,6 +28,9 @@
     padding: 8px 16px;
     margin-right: 16px;
     flex-grow: 1;
+    width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sidebar__button {

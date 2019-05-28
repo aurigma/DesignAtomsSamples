@@ -53,20 +53,6 @@ span .control-label {
     margin-top: 8px;
 }
 
-fieldset {
-    border: 1px solid #CCCCCC;
-}
-
-legend {
-    font-family: Roboto;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: left;
-    letter-spacing: 0.25px;
-    color: #555555;
-}
-
 #apply {
     margin-top: 16px;
     float: right;

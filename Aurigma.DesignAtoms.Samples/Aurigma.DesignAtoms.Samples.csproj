@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\Controllers\GenerateController.cs" />
+    <Compile Include="Code\Controllers\IdmlController.cs" />
     <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Code\Controllers\StateController.cs" />
     <Compile Include="Code\DemoProducts.cs" />
@@ -199,7 +200,9 @@
     <TypeScriptCompile Include="scripts\Helper.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="scripts\index.ts" />
     <TypeScriptCompile Include="scripts\IResourceUrlMap.ts" />
+    <TypeScriptCompile Include="scripts\ProductFactory.ts" />
     <TypeScriptCompile Include="scripts\Utils.ts" />
     <TypeScriptCompile Include="scripts\Window.d.ts" />
   </ItemGroup>
