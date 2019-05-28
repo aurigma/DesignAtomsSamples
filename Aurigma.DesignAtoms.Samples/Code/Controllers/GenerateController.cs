@@ -56,10 +56,7 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
             };
 
             var productJson = JsonConvert.SerializeObject(product, _productJsonConverter);
-
-            //Deserialization sample
-            //var test = JsonConvert.DeserializeObject<Product>(productJson, _productJsonConverter);
-
+            
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent(productJson, Encoding.UTF8, "application/json")
