@@ -24,9 +24,19 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
         [ActionName("designs")]
         public HttpResponseMessage GetFiles()
         {
-            var idmlFiles = Directory
-                .GetFiles(GetDesignsFolder(), "*.idml")
-                .Select(Path.GetFileNameWithoutExtension);
+            var idmlFiles = new[]
+            {
+                new DesignFile
+                {
+                    Name = "bc",
+                    Path = "bc.idml"
+                },
+                new DesignFile
+                {
+                    Name = "flyer",
+                    Path = Path.Combine("single", "flyer.idml")
+                }
+            };
 
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
@@ -35,15 +45,15 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
         }
 
         [ActionName("product")]
-        public HttpResponseMessage GetProduct(string file)
+        public HttpResponseMessage GetProduct(string filePath)
         {
-            var fullDesignName = Path.ChangeExtension(Path.Combine(GetDesignsFolder(), file), "idml");
+            var fullDesignName = Path.ChangeExtension(Path.Combine(GetDesignsFolder(), filePath), "idml");
 
             if (!File.Exists(fullDesignName))
             {
                 return new HttpResponseMessage(HttpStatusCode.NotFound)
                 {
-                    Content = new StringContent($"Design {file} not found")
+                    Content = new StringContent($"Design {filePath} not found")
                 };
             }
 
@@ -59,5 +69,12 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
         {
             return System.Web.Hosting.HostingEnvironment.MapPath("~/assets/designs");
         }
+    }
+
+
+    public class DesignFile
+    {
+        public string Name;
+        public string Path;
     }
 }

@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const selectedDesign = designsSelectElement.selectedOptions[0].value;
 
             if (selectedDesign !== "") {
-                const url = `/api/idml/product?file=${selectedDesign}`;
+                const url = `/api/idml/product?filePath=${selectedDesign}`;
 
                 const product = await Helper.loadProduct(url);
 
@@ -62,9 +62,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
     const response = await fetch("/api/idml/designs");
-    const designs: string[] = await response.json();
+    const designs: {name: string, path: string }[] = await response.json();
 
-    addOptions(designsSelectElement, designs);
+    designs.forEach(d => {
+        const optionElement = document.createElement("option");
+        optionElement.text = d.name;
+        optionElement.value = d.path;
+        designsSelectElement.add(optionElement);
+    });
 
     updateStates(statesElement);
 });

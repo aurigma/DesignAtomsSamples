@@ -1,0 +1,98 @@
+%!Adobe-FontList 1.19
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Raleway-Black
+FamilyName:Raleway
+StyleName:Black
+FullName:Raleway Black
+MenuName:Raleway Black
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\work\Products\ProductTemplates\designs\demos\flyer\single\Document fonts\Raleway-Black.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:180592
+FileModTime:1346950800
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Raleway Black
+NameArray:0,Win,1,Raleway Black
+NameArray:0,Win,16,Raleway
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Roboto-Black
+FamilyName:Roboto
+StyleName:Black
+FullName:Roboto Black
+MenuName:Roboto Black
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\work\Products\ProductTemplates\designs\demos\flyer\single\Document fonts\Roboto-Black_0.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:533852
+FileModTime:1466664552
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Roboto Black
+NameArray:0,Win,1,Roboto Black
+NameArray:0,Win,16,Roboto
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Roboto-Medium
+FamilyName:Roboto
+StyleName:Medium
+FullName:Roboto Medium
+MenuName:Roboto Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\work\Products\ProductTemplates\designs\demos\flyer\single\Document fonts\Roboto-Medium_0.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:537252
+FileModTime:1466664552
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Roboto Medium
+NameArray:0,Win,1,Roboto Medium
+NameArray:0,Win,16,Roboto
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Roboto-Regular
+FamilyName:Roboto
+StyleName:Regular
+FullName:Roboto
+MenuName:Roboto
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\work\Products\ProductTemplates\designs\demos\flyer\single\Document fonts\Roboto-Regular_0.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:540224
+FileModTime:1466664552
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Roboto
+NameArray:0,Win,1,Roboto
+%EndFont
+
