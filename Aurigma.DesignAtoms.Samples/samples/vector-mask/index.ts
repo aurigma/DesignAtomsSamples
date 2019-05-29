@@ -29,12 +29,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const item = selectedHandlers.get(0).item as ShapeItem;
 
-            if (item.mask != null)
-                return;
-
             const itemBounds = item.sourcePath.bounds;
             const mask = new ItemMask();
-            mask.vectorMask = Path.ellipse(itemBounds.left, itemBounds.top, 40, 40);
+            mask.vectorMask = Path.ellipse(itemBounds.left, itemBounds.top, itemBounds.width, itemBounds.height);
 
             item.mask = mask;
         });
