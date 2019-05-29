@@ -10,12 +10,12 @@ using Newtonsoft.Json;
 
 namespace Aurigma.DesignAtoms.Samples.Code.Controllers
 {
-    public class IdmlController : ApiController
+    public class TemplateController : ApiController
     {
         private readonly ITemplateConverter _templateConverter;
         private readonly ProductJsonConverter _productJsonConverter;
 
-        public IdmlController(ITemplateConverter converter, ProductJsonConverter jsonConverter)
+        public TemplateController(ITemplateConverter converter, ProductJsonConverter jsonConverter)
         {
             _templateConverter = converter;
             _productJsonConverter = jsonConverter;
@@ -24,7 +24,7 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
         [ActionName("designs")]
         public HttpResponseMessage GetFiles()
         {
-            var idmlFiles = new[]
+            var designFiles = new[]
             {
                 new DesignFile
                 {
@@ -35,19 +35,24 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
                 {
                     Name = "flyer",
                     Path = Path.Combine("single", "flyer.idml")
+                },
+                new DesignFile
+                {
+                    Name = "test-page",
+                    Path = "test-page.psd"
                 }
             };
 
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
-                Content = new StringContent(JsonConvert.SerializeObject(idmlFiles), Encoding.UTF8, "application/json")
+                Content = new StringContent(JsonConvert.SerializeObject(designFiles), Encoding.UTF8, "application/json")
             };
         }
 
         [ActionName("product")]
         public HttpResponseMessage GetProduct(string filePath)
         {
-            var fullDesignName = Path.ChangeExtension(Path.Combine(GetDesignsFolder(), filePath), "idml");
+            var fullDesignName = Path.Combine(GetDesignsFolder(), filePath);
 
             if (!File.Exists(fullDesignName))
             {
