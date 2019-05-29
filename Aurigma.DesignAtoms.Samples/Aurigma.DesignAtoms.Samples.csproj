@@ -162,7 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\Controllers\GenerateController.cs" />
-    <Compile Include="Code\Controllers\IdmlController.cs" />
+    <Compile Include="Code\Controllers\TemplateController.cs" />
     <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Code\Controllers\StateController.cs" />
     <Compile Include="Code\DemoProducts.cs" />
@@ -176,7 +176,6 @@
     <Content Include="package.json" />
     <None Include="packages.config" />
     <Content Include="tsconfig.json" />
-    <None Include="readme.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
