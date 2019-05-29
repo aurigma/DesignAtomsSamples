@@ -18,7 +18,9 @@ You may find some documentation here:
  
 ## What you will find in this repo? 
  
-This is a sample C#/TypeScript project for Customer's Canvas Design Atoms Framework. It demonstrates how to create a back end for Design Atoms and you can solve various image manipulation tasks at both front end (TypeScript) and back end (C#) using Design Atoms Framework. 
+This is a sample C#/TypeScript project for Customer's Canvas Design Atoms Framework. It demonstrates how to create a back end for Design Atoms and you can solve various image manipulation tasks at both front end (TypeScript) and back end (C#) using Design Atoms Framework.
+
+From time to time we update the project and add new demos/samples. See the [CHANGELOG](CHANGELOG.md) for details.  
  
 ## How to get started? 
  
