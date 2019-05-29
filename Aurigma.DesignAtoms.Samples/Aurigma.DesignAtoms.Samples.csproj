@@ -1,6 +1,6 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,14 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aurigma.DesignAtoms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.DesignAtoms.5.0.0\lib\net45\Aurigma.DesignAtoms.dll</HintPath>
+    <Reference Include="Aurigma.DesignAtoms, Version=5.0.1.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.DesignAtoms.5.0.1\lib\net45\Aurigma.DesignAtoms.dll</HintPath>
     </Reference>
-    <Reference Include="Aurigma.GraphicsMill, Version=10.0.81.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=AMD64">
-      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x64.10.0.81\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
+    <Reference Include="Aurigma.GraphicsMill, Version=10.0.100.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=AMD64">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x64.10.0.100\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
     </Reference>
-    <Reference Include="Aurigma.GraphicsMill.Templates, Version=10.0.81.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.GraphicsMill.Templates.x64.10.0.81\lib\net40\Aurigma.GraphicsMill.Templates.dll</HintPath>
+    <Reference Include="Aurigma.GraphicsMill.Templates, Version=10.0.100.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Templates.x64.10.0.100\lib\net40\Aurigma.GraphicsMill.Templates.dll</HintPath>
     </Reference>
     <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
@@ -71,6 +71,9 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -124,8 +127,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="tar-cs, Version=5.0.0.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.DesignAtoms.5.0.0\lib\net45\tar-cs.dll</HintPath>
+    <Reference Include="tar-cs, Version=5.0.1.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.DesignAtoms.5.0.1\lib\net45\tar-cs.dll</HintPath>
     </Reference>
     <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
@@ -135,19 +138,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="assets\image.jpg" />
     <Content Include="assets\test-page.jpg" />
     <Content Include="Index.html" />
     <Content Include="samples\backend\Index.html" />
     <Content Include="samples\backend\style.css" />
+    <Content Include="samples\curved-text\index.html" />
     <Content Include="samples\demo\Index.html" />
     <Content Include="samples\demo\style.css" />
+    <Content Include="samples\events-demo\index.html" />
+    <Content Include="samples\events-demo\style.css" />
+    <Content Include="samples\open-type-feature\index.html" />
+    <Content Include="samples\open-type-feature\style.css" />
+    <Content Include="samples\vector-mask\index.html" />
     <Content Include="styles\demo.css" />
     <Content Include="styles\logo.svg" />
     <Content Include="styles\style.css" />
@@ -158,8 +162,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\Controllers\GenerateController.cs" />
+    <Compile Include="Code\Controllers\TemplateController.cs" />
     <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Code\Controllers\StateController.cs" />
+    <Compile Include="Code\DemoProducts.cs" />
+    <Compile Include="Code\TextSamples.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,7 +176,6 @@
     <Content Include="package.json" />
     <None Include="packages.config" />
     <Content Include="tsconfig.json" />
-    <None Include="readme.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -182,11 +188,17 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="samples\backend\index.ts" />
+    <TypeScriptCompile Include="samples\curved-text\index.ts" />
     <TypeScriptCompile Include="samples\demo\index.ts" />
+    <TypeScriptCompile Include="samples\events-demo\index.ts" />
+    <TypeScriptCompile Include="samples\open-type-feature\index.ts" />
+    <TypeScriptCompile Include="samples\vector-mask\index.ts" />
     <TypeScriptCompile Include="scripts\Helper.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="scripts\index.ts" />
     <TypeScriptCompile Include="scripts\IResourceUrlMap.ts" />
+    <TypeScriptCompile Include="scripts\ProductFactory.ts" />
     <TypeScriptCompile Include="scripts\Utils.ts" />
     <TypeScriptCompile Include="scripts\Window.d.ts" />
   </ItemGroup>
@@ -259,8 +271,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
     <ItemGroup>

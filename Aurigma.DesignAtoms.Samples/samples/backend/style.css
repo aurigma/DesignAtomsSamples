@@ -1,6 +1,4 @@
-﻿body {}
-
-.sidebar__input {
+﻿.sidebar__input {
     background: #FFFFFF;
     border: 1px solid #D6D7DA;
     border-radius: 3px;
@@ -30,6 +28,9 @@
     padding: 8px 16px;
     margin-right: 16px;
     flex-grow: 1;
+    width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sidebar__button {

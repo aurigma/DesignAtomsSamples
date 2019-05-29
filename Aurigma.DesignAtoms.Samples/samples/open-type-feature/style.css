@@ -1,0 +1,32 @@
+﻿.sidebar__toggle__button {
+    background: #FFFFFF;
+    border: 1px solid #D6D7DA;
+    border-radius: 2px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.25px;
+    color: #555555;
+    padding: 5px;
+    width: 110px;
+    margin-bottom: 2px;
+    text-decoration: none;
+}
+
+.sidebar__toggle__button__down {
+    background: #bbb;
+    border-top: 2px solid #777;
+    border-left: 2px solid #777;
+    border-bottom: 2px solid #eaeaea;
+    border-right: 2px solid #eaeaea;
+}
+
+.sidebar__flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}

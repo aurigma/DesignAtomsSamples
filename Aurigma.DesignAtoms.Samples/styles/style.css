@@ -177,3 +177,17 @@ a:hover {
 .hidden {
     display: none;
 }
+
+legend {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+    letter-spacing: 0.25px;
+    color: #555555;
+}
+
+fieldset {
+    border: 2px solid #c0c0c0;
+}
