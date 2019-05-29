@@ -55,9 +55,41 @@ An example how to use back end and front end libraries together. It demonstrates
  
 - Constructing a design on a server side
 - Sending the design from a server to a client and backward
+- Loading a template from IDML or PSD file
 - Rendering a design as JPEG and PDF on the server
 - Serialization/deserialization of a design to a file system (i.e. save/restore using its own file format). 
  
+### open-type-feature
+
+An example how to work with OpenType Features of a text (such as ligatures, swash, all caps/small caps, subscript/superscript and many more). It demonstrates: 
+
+- Adding or removing OpenType Feature from a text element on a client and server side
+- Reading OpenType Features and updating the user interface based on them.
+
+### vector-mask
+
+A demo for the mask feature. It illustrates the following features (both client-side and server-side code): 
+
+- Adding a vector mask to different item types
+- Removing a mask
+
+### curved-text
+
+A demo for the curved text feature. It demonstrates how to do the following (both server-side and client-side):
+
+- Create a curved text element based on a path and a text 
+- Apply it both for the plain text and rich formatted text
+
+### events-demo
+
+An example how you can detect changes in the design as well as get a selected item. The following features is illustrated: 
+
+- Listening to the product model changes
+- Determining what items and its properties are changed
+- Receiving old and new values
+- Detecting adding/removing elements
+- Detecting element selection
+
 ## Questions? 
  
 If you have any problems or questions how to get started, feel free to post questions on [Customer's Canvas forum](https://forums.aurigma.com/yaf_topics44_Discussions--Customers-Canvas.aspx?src=github) or [submit a support ticket](https://customerscanvas.com/account/cases/add). 
