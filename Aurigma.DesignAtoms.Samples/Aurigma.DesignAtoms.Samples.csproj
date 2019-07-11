@@ -151,6 +151,8 @@
     <Content Include="samples\events-demo\style.css" />
     <Content Include="samples\open-type-feature\index.html" />
     <Content Include="samples\open-type-feature\style.css" />
+    <Content Include="samples\pdf-box-backend\index.html" />
+    <Content Include="samples\pdf-box-backend\style.css" />
     <Content Include="samples\vector-mask\index.html" />
     <Content Include="styles\demo.css" />
     <Content Include="styles\logo.svg" />
@@ -162,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\Controllers\GenerateController.cs" />
+    <Compile Include="Code\Controllers\SafetyLinesController.cs" />
     <Compile Include="Code\Controllers\TemplateController.cs" />
     <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Code\Controllers\StateController.cs" />
@@ -192,6 +195,7 @@
     <TypeScriptCompile Include="samples\demo\index.ts" />
     <TypeScriptCompile Include="samples\events-demo\index.ts" />
     <TypeScriptCompile Include="samples\open-type-feature\index.ts" />
+    <TypeScriptCompile Include="samples\pdf-box-backend\index.ts" />
     <TypeScriptCompile Include="samples\vector-mask\index.ts" />
     <TypeScriptCompile Include="scripts\Helper.ts">
       <SubType>Code</SubType>
