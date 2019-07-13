@@ -1,0 +1,15 @@
+﻿.fonts {
+    width: 100%;
+    resize: vertical;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background: #FFFFFF;
+    padding: 8px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.25px;
+}

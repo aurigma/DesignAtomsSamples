@@ -153,6 +153,8 @@
     <Content Include="samples\open-type-feature\style.css" />
     <Content Include="samples\pdf-box-backend\index.html" />
     <Content Include="samples\pdf-box-backend\style.css" />
+    <Content Include="samples\state-fonts\Index.html" />
+    <Content Include="samples\state-fonts\style.css" />
     <Content Include="samples\vector-mask\index.html" />
     <Content Include="styles\demo.css" />
     <Content Include="styles\logo.svg" />
@@ -179,6 +181,7 @@
     <Content Include="package.json" />
     <None Include="packages.config" />
     <Content Include="tsconfig.json" />
+    <Content Include="samples\state-fonts\state-fonts.st" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -196,6 +199,7 @@
     <TypeScriptCompile Include="samples\events-demo\index.ts" />
     <TypeScriptCompile Include="samples\open-type-feature\index.ts" />
     <TypeScriptCompile Include="samples\pdf-box-backend\index.ts" />
+    <TypeScriptCompile Include="samples\state-fonts\index.ts" />
     <TypeScriptCompile Include="samples\vector-mask\index.ts" />
     <TypeScriptCompile Include="scripts\Helper.ts">
       <SubType>Code</SubType>

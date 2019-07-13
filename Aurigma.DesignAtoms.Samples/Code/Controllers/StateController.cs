@@ -1,7 +1,9 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Web.Hosting;
 using System.Web.Http;
 using Aurigma.DesignAtoms.Model;
 using Aurigma.DesignAtoms.Serialization;
@@ -17,27 +19,49 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
 
         private readonly IStateFileSerializer _stateFileSerializer;
         private readonly ProductJsonConverter _productJsonConverter;
+        private readonly ProductHandler _productHandler;
 
         public class RequestData
         {
             public Product Product;
         }
+        
+        static StateController()
+        {
+            var states = new[]
+            {
+                HostingEnvironment.MapPath("~/samples/state-fonts/state-fonts.st")
+            };
 
-        public StateController(IStateFileSerializer stateFileSerializer, ProductJsonConverter productJsonConverter)
+            foreach (var state in states)
+            {
+                var destFileName = Path.Combine(HostingEnvironment.MapPath(_statesFolder), Path.GetFileName(state));
+                File.Copy(state, destFileName, true);
+            }
+        }
+
+        public StateController(
+            IStateFileSerializer stateFileSerializer, 
+            ProductJsonConverter productJsonConverter, 
+            ProductHandler productHandler)
         {
             _stateFileSerializer = stateFileSerializer;
             _productJsonConverter = productJsonConverter;
+            _productHandler = productHandler;
 
-            _statesFolderPath = System.Web.Hosting.HostingEnvironment.MapPath(_statesFolder);
+            _statesFolderPath = HostingEnvironment.MapPath(_statesFolder);
             
             if (!Directory.Exists(_statesFolderPath))
                 Directory.CreateDirectory(_statesFolderPath);
         }
 
         [HttpGet]
-        public HttpResponseMessage allStates()
+        public HttpResponseMessage AllStates()
         {
-            var states = Directory.EnumerateFiles(System.Web.Hosting.HostingEnvironment.MapPath(_statesFolder));
+            var states = Directory
+                .EnumerateFiles(HostingEnvironment.MapPath(_statesFolder))
+                .Select(Path.GetFileNameWithoutExtension);
+            
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent(JsonConvert.SerializeObject(states), Encoding.UTF8, "application/json")
@@ -67,6 +91,22 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
                 return new HttpResponseMessage(HttpStatusCode.OK)
                 {
                     Content = new StringContent(JsonConvert.SerializeObject(state.Product, _productJsonConverter), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        [HttpGet]
+        [Route("api/states/{id}/fonts")]
+        public HttpResponseMessage GetFonts(string id)
+        {
+            using (var stream = File.OpenRead(GetStatePath(id)))
+            {
+                var state = _stateFileSerializer.Deserialize(stream);
+                var fonts = _productHandler.GetProductFonts(state.Product).ToArray();
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JsonConvert.SerializeObject(fonts), Encoding.UTF8, "application/json")
                 };
             }
         }
