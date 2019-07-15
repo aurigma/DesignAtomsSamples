@@ -88,10 +88,7 @@ async function updateStates(statesElement: HTMLSelectElement) {
         statesElement.options[i] = null;
     }
 
-    const response = await fetch("/api/State/AllStates");
-    const statesFromServer: string[] = await response.json();
+    const states = await Helper.getStates();
 
-    //Todo: Have to fix it
-    let states = statesFromServer.map(state => state.substring(state.lastIndexOf("\\") + 1, state.lastIndexOf(".")));
     addOptions(statesElement, states);
 }

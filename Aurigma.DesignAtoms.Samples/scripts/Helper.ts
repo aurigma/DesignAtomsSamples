@@ -129,6 +129,10 @@ export class Helper {
         return new JsonProductSerializer().deserialize(data);
     }
 
+    static async getStates() : Promise<string[]> {
+        const response = await fetch("/api/State/AllStates");
+        return await response.json();
+    }
 
     async updateProductViewer(productName: string) {
         fetch(`/api/Generate/${productName}`)

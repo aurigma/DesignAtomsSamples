@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Design Atoms Sample</title>
+    <link type="text/css" rel="stylesheet" href="/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/demo.css" />
+    <link type="text/css" rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="/scripts/bundles/state-fonts.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__section header__section-logo"><a href="https://customerscanvas.com" target="_blank"><img
+                    class="header__logo" src="/styles/logo.svg" alt="logo" /></a></div>
+    </header>
+    <main class="main">
+        <div id="viewer-wrapper">
+            <div id="viewer"></div>
+            <div id="sidebar">
+                <fieldset class="sidebar__section">
+                    <legend>States</legend>
+                    <div class="sidebar__section">
+                        <select class="sidebar__select" id="states">
+                            <option selected disabled value="">Select state</option>
+                        </select>
+                        <button class="sidebar__button" id="load-state">Load from server</button>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="sidebar__section">
+                    <legend>State fonts</legend>
+                    <div class="sidebar__section">
+                        <textarea id="fonts" rows="10" class="fonts" disabled></textarea>
+                    </div>
+                </fieldset>
+                
+                <div class="sidebar__section">
+                    <button class="sidebar__button" id="preview">Download Jpeg</button>
+                    <button class="sidebar__button" id="hi-res">Download PDF</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

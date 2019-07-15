@@ -1,0 +1,59 @@
+﻿.flex {
+    display: flex;
+}
+
+.margin-item {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-editor {
+    max-width: 280px;
+}
+
+.control-label {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+    letter-spacing: 0.25px;
+    color: #555555;
+}
+
+span .control-label {
+    font-size: 16px;
+}
+
+.pdf-box-editor {
+    width: 100%;
+}
+
+.margin-control {
+    margin-left: 16px;
+    width: 80px;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.25px;
+    color: #555555;
+}
+#margin-editor div :not(:first-child) {
+    margin-top: 4px;
+}
+
+.flex-column-center div :not(:first-child) {
+    margin-top: 8px;
+}
+
+#apply {
+    margin-top: 16px;
+    float: right;
+}

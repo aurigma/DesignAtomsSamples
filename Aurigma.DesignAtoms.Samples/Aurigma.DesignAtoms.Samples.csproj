@@ -45,14 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aurigma.DesignAtoms, Version=5.1.1.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.DesignAtoms.5.1.1\lib\net45\Aurigma.DesignAtoms.dll</HintPath>
+    <Reference Include="Aurigma.DesignAtoms, Version=5.3.0.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.DesignAtoms.5.3.0\lib\net45\Aurigma.DesignAtoms.dll</HintPath>
     </Reference>
-    <Reference Include="Aurigma.GraphicsMill, Version=10.0.103.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=AMD64">
-      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x64.10.0.103\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
+    <Reference Include="Aurigma.GraphicsMill, Version=10.0.114.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=AMD64">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x64.10.0.114\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
     </Reference>
-    <Reference Include="Aurigma.GraphicsMill.Templates, Version=10.0.103.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.GraphicsMill.Templates.x64.10.0.103\lib\net40\Aurigma.GraphicsMill.Templates.dll</HintPath>
+    <Reference Include="Aurigma.GraphicsMill.Templates, Version=10.0.114.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Templates.x64.10.0.114\lib\net40\Aurigma.GraphicsMill.Templates.dll</HintPath>
     </Reference>
     <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
@@ -127,8 +127,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="tar-cs, Version=5.1.1.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.DesignAtoms.5.1.1\lib\net45\tar-cs.dll</HintPath>
+    <Reference Include="tar-cs, Version=5.3.0.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.DesignAtoms.5.3.0\lib\net45\tar-cs.dll</HintPath>
     </Reference>
     <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
@@ -151,6 +151,10 @@
     <Content Include="samples\events-demo\style.css" />
     <Content Include="samples\open-type-feature\index.html" />
     <Content Include="samples\open-type-feature\style.css" />
+    <Content Include="samples\pdf-box-backend\index.html" />
+    <Content Include="samples\pdf-box-backend\style.css" />
+    <Content Include="samples\state-fonts\Index.html" />
+    <Content Include="samples\state-fonts\style.css" />
     <Content Include="samples\vector-mask\index.html" />
     <Content Include="styles\demo.css" />
     <Content Include="styles\logo.svg" />
@@ -162,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\Controllers\GenerateController.cs" />
+    <Compile Include="Code\Controllers\SafetyLinesController.cs" />
     <Compile Include="Code\Controllers\TemplateController.cs" />
     <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Code\Controllers\StateController.cs" />
@@ -176,6 +181,7 @@
     <Content Include="package.json" />
     <None Include="packages.config" />
     <Content Include="tsconfig.json" />
+    <Content Include="samples\state-fonts\state-fonts.st" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,6 +198,8 @@
     <TypeScriptCompile Include="samples\demo\index.ts" />
     <TypeScriptCompile Include="samples\events-demo\index.ts" />
     <TypeScriptCompile Include="samples\open-type-feature\index.ts" />
+    <TypeScriptCompile Include="samples\pdf-box-backend\index.ts" />
+    <TypeScriptCompile Include="samples\state-fonts\index.ts" />
     <TypeScriptCompile Include="samples\vector-mask\index.ts" />
     <TypeScriptCompile Include="scripts\Helper.ts">
       <SubType>Code</SubType>

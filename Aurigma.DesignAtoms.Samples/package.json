@@ -1,6 +1,6 @@
 {
   "name": "@aurigma/design-atoms-samples",
-  "private": "true",
+  "private": true,
   "version": "5.0.0",
   "description": "Samples for the Design Atoms Framework",
   "main": "index.js",
@@ -19,7 +19,7 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "@aurigma/design-atoms": "5.1.1"
+    "@aurigma/design-atoms": "5.3.0"
   },
   "-vs-binding": {
     "AfterBuild": [
