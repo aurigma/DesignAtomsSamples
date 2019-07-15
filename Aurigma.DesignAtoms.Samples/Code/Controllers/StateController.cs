@@ -28,6 +28,8 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
         
         static StateController()
         {
+            Directory.CreateDirectory(HostingEnvironment.MapPath(_statesFolder));
+
             var states = new[]
             {
                 HostingEnvironment.MapPath("~/samples/state-fonts/state-fonts.st")
