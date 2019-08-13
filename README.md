@@ -12,8 +12,8 @@ For example, you may create a template in InDesign, import it as a Design Atoms 
  
 You may find some documentation here: 
  
-- https://customerscanvas.com/docs/cc/reference-cs.htm
-- https://customerscanvas.com/docs/cc/introduction-to-backend-api.htm
+- https://customerscanvas.com/docs/cc/design-atoms-fw.htm
+- https://customerscanvas.com/docs/cc/using-design-atoms-fw.htm
 - https://customerscanvas.com/docs/cc/introduction-to-iframe-api-v5.htm
  
 ## What you will find in this repo? 
