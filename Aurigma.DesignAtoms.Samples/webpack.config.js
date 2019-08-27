@@ -22,7 +22,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: [".ts",".js", ".json", ".css"],
+        extensions: [".ts", ".js", ".json", ".css"],
         modules: [
             path.join(__dirname, "node_modules")
         ]
@@ -37,4 +37,4 @@ module.exports = {
         Buffer: false,
         fs: "empty"
     }
-}
+};

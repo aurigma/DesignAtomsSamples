@@ -1,4 +1,4 @@
-﻿import { BaseTextItemHandler } from "@aurigma/design-atoms/ItemHandlers";
+﻿import { BaseTextItemHandler, OpenTypeFeature } from "@aurigma/design-atoms/ItemHandlers/BaseTextItemHandler";
 import { Helper } from "../../scripts/Helper";
 
 const backendUrl = "http://localhost:60669";
@@ -26,13 +26,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         const selectedHandlers = viewer.canvas.get_selectedItemHandlers();
 
         if (selectedHandlers.length === 0 || !(selectedHandlers.get(0) instanceof BaseTextItemHandler)) {
-
             resetOtfButtonState();
             return;
         }
 
         const openTypeFeatures = (<BaseTextItemHandler>selectedHandlers.get(0)).item.font.openTypeFeatures;
-        
+
         changeOtfButtonState(openTypeFeatures);
     });
 
@@ -50,22 +49,24 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (selectedHandlers.length === 0 || !(selectedHandlers.get(0) instanceof BaseTextItemHandler)) {
                 return;
             }
+            const textHandler = <BaseTextItemHandler>selectedHandlers.get(0);
+            const item = textHandler.item;
+            let openTypeFeatures: OpenTypeFeature[] = [];
 
-            const item = (<BaseTextItemHandler>selectedHandlers.get(0)).item;
-            let openTypeFeatures = [];
-
-            const selectedFeature = target.dataset[openTypeFeatureDataSetKey];
-
+            const selectedFeatureTag = target.dataset[openTypeFeatureDataSetKey];
             if (!target.classList.contains(sidebarToggleButtonDownClass)) {
                 openTypeFeatures = openTypeFeatures.concat(item.font.openTypeFeatures);
-                openTypeFeatures.push(selectedFeature);
-
+                let otf = new OpenTypeFeature();
+                otf.tag = selectedFeatureTag;
+                otf.value = 1;
+                openTypeFeatures.push(otf);
             } else {
-                openTypeFeatures = item.font.openTypeFeatures.filter(x => x !== selectedFeature);
+                openTypeFeatures = item.font.openTypeFeatures.filter(x => x.tag !== selectedFeatureTag);
             }
 
             target.classList.toggle(sidebarToggleButtonDownClass);
             item.font.openTypeFeatures = openTypeFeatures;
+            textHandler.quickUpdate();
         });
     }
 
@@ -79,13 +80,13 @@ function getOpenTypeFeatureButtons() {
     return document.querySelectorAll("#otf a");
 }
 
-function changeOtfButtonState(openTypeFeatures: string[]) {
+function changeOtfButtonState(openTypeFeatures: OpenTypeFeature[]) {
     const buttons = getOpenTypeFeatureButtons();
 
     for (let i = 0; i < buttons.length; i++) {
         const button = buttons[i] as HTMLElement;
 
-        if (openTypeFeatures.find(f => f === button.dataset[openTypeFeatureDataSetKey]) != null) {
+        if (openTypeFeatures.find(f => f.tag === button.dataset[openTypeFeatureDataSetKey]) != null) {
             button.classList.toggle(sidebarToggleButtonDownClass);
         } else {
             button.classList.remove(sidebarToggleButtonDownClass);
