@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Background Sample Backend</title>
+    <link type="text/css" rel="stylesheet" href="/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/demo.css" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/scripts/bundles/background-backend.js"></script>
+</head>
+<header class="header">
+    <div class="header__section header__section-logo"><a href="https://customerscanvas.com" target="_blank"><img class="header__logo" src="/styles/logo.svg" alt="logo" /></a></div>
+</header>
+<body>
+    <div id="viewer-wrapper">
+        <div id="viewer"></div>
+        <div id="sidebar">
+            <ul class="nav nav-pills" role="tablist">
+                <li class="active"><a href="#color" class="btn btn-block active-btn ellips-btn active" aria-controls="color" role="tab" data-toggle="tab">Color</a></li>
+                <li><a href="#picture" class="btn btn-block ellips-btn"aria-controls="picture" role="tab" data-toggle="tab">Picture</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="color">
+                    <div class="sidebar__section">
+                        <div class="round"><button id="white-bg" class="round-btn white"></button></div>
+                        <div class="round"><button id="black-bg" class="round-btn black"></button></div>
+                        <div class="round"><button id="red-bg" class="round-btn red"></button></div>
+                        <div class="round"><button id="green-bg" class="round-btn green"></button></div>
+                        <div class="round"><button id="blue-bg" class="round-btn blue"></button></div>
+                        <div class="round"><button id="yellow-bg" class="round-btn yellow"></button></div>
+                        <div class="round"><button id="purple-bg" class="round-btn purple"></button></div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="picture">
+                    <button id="first-pic-bg" class="picture-btn"><img class="picture" src="images/01.png"></button>
+                    <button id="second-pic-bg" class="picture-btn"><img class="picture" src="images/02.png"></button>
+                    <button id="third-pic-bg" class="picture-btn"><img class="picture" src="images/03.png"></button>
+                </div>
+                <button class="delete-bg-btn"><span class="cross">×</span><span class="text">Delete background</span></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

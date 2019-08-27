@@ -144,6 +144,10 @@
     <Content Include="Index.html" />
     <Content Include="samples\backend\Index.html" />
     <Content Include="samples\backend\style.css" />
+    <Content Include="samples\background-backend\index.html" />
+    <Content Include="samples\background-backend\style.css" />
+    <Content Include="samples\mockup-backend\index.html" />
+    <Content Include="samples\mockup-backend\style.css" />
     <Content Include="samples\curved-text\index.html" />
     <Content Include="samples\demo\Index.html" />
     <Content Include="samples\demo\style.css" />
@@ -165,12 +169,16 @@
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Controllers\MockupController.cs" />
+    <Compile Include="Code\Controllers\BackgroundController.cs" />
     <Compile Include="Code\Controllers\GenerateController.cs" />
     <Compile Include="Code\Controllers\SafetyLinesController.cs" />
     <Compile Include="Code\Controllers\TemplateController.cs" />
     <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Code\Controllers\StateController.cs" />
     <Compile Include="Code\DemoProducts.cs" />
+    <Compile Include="Code\Models\ColorRequestData.cs" />
+    <Compile Include="Code\Models\PictureRequestData.cs" />
     <Compile Include="Code\TextSamples.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,6 +202,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="samples\backend\index.ts" />
+    <TypeScriptCompile Include="samples\background-backend\index.ts" />
+    <TypeScriptCompile Include="samples\mockup-backend\index.ts" />
     <TypeScriptCompile Include="samples\curved-text\index.ts" />
     <TypeScriptCompile Include="samples\demo\index.ts" />
     <TypeScriptCompile Include="samples\events-demo\index.ts" />

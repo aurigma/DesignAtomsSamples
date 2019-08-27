@@ -1,0 +1,168 @@
+﻿.flex {
+    display: flex;
+}
+
+.margin-item {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-editor {
+    max-width: 280px;
+}
+
+.control-label {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+    letter-spacing: 0.25px;
+    color: #555555;
+}
+
+span .control-label {
+    font-size: 16px;
+}
+
+.pdf-box-editor {
+    width: 100%;
+}
+
+.margin-control {
+    margin-left: 16px;
+    width: 80px;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.25px;
+    color: #555555;
+}
+#margin-editor div :not(:first-child) {
+    margin-top: 4px;
+}
+
+.flex-column-center div :not(:first-child) {
+    margin-top: 8px;
+}
+
+#apply {
+    margin-top: 16px;
+    float: right;
+}
+
+div.round {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 18px;
+    margin: 4px;
+}
+
+.round-btn {
+    border: 3px solid #FFFFFF;
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    cursor: pointer;
+    outline: none;
+}
+
+.round-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #88b8ff;
+}
+
+.ellips-btn {
+    cursor: pointer;
+    border: 1px solid #FFFFFF !important;
+    width: 128px !important;
+    height: 32px !important;
+    border-radius: 16px !important;
+    margin: 12px 10px 20px 0px !important;
+    background: #FFFFFF !important;
+}
+
+button, .btn {
+    font-family: Roboto !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #909293 !important;
+}
+
+.picture-btn {
+    width: 74px;
+    height: 74px;
+    border: 1px solid #E0E0E0;
+    background: #FFFFFF;
+    margin: 4px;
+    padding: 0 4px;
+}
+
+.picture {
+    height: 66px;
+}
+
+.delete-bg-btn {
+    display: flex;
+    justify-content: center;
+    margin: 4px 0px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+}
+
+.delete-bg-btn:active {
+    box-shadow: inset -1px -1px 1px gray;
+}
+
+.delete-bg-btn span.cross {
+    font-size: 25px;
+    margin: 0 9px 0 2px;
+}
+
+.delete-bg-btn span.text {
+    margin: 8px 2px;
+}
+
+.ellips-btn.active {
+    background: #EAF9FF !important;
+}
+
+
+.white {
+    background: #FFFFFF;
+}
+
+.black {
+    background: #2D2D2D;
+}
+
+.red {
+    background: #DC0000;
+}
+
+.green {
+    background: #3E9E00;
+}
+
+.blue {
+    background: #005EBA;
+}
+
+.yellow {
+    background: #F3B311;
+}
+
+.purple {
+    background: #8020AD;
+}
