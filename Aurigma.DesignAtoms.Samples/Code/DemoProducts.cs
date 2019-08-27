@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Web.Hosting;
-using Aurigma.DesignAtoms.Canvas.Collection;
+﻿using Aurigma.DesignAtoms.Canvas.Collection;
 using Aurigma.DesignAtoms.Model;
 using Aurigma.DesignAtoms.Model.Items;
 using Aurigma.GraphicsMill;
 using Aurigma.GraphicsMill.AdvancedDrawing;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Web.Hosting;
 using Path = Aurigma.DesignAtoms.Common.Math.Path;
 using PointF = System.Drawing.PointF;
 using Utils = Aurigma.DesignAtoms.Common.Utils;
@@ -42,15 +42,15 @@ namespace Aurigma.DesignAtoms.Samples.Code
         {
             var swash = new BoundedTextItem(TestText.LoremIpsum,
                 new RectangleF(20f, 20f, 350, 180), "Nautilus Pompilius", 15);
-            swash.Font.OpenTypeFeatures.Add(OpenTypeFeature.Swsh);
+            swash.Font.OpenTypeFeatures.Add(new OpenTypeFeature(OpenTypeFeatureTag.Swsh, 1));
 
             var ligature = new BoundedTextItem(TestText.LoremIpsum,
                 new RectangleF(20f, 220f, 350, 180), "Nautilus Pompilius", 15);
-            ligature.Font.OpenTypeFeatures.Add(OpenTypeFeature.Dlig);
+            ligature.Font.OpenTypeFeatures.Add(new OpenTypeFeature(OpenTypeFeatureTag.Dlig, 1));
 
             var smallCaps = new BoundedTextItem(TestText.LoremIpsum,
                 new RectangleF(20f, 420f, 350, 180), "Montserrat-Regular", 15);
-            smallCaps.Font.OpenTypeFeatures.Add(OpenTypeFeature.Smcp);
+            smallCaps.Font.OpenTypeFeatures.Add(new OpenTypeFeature(OpenTypeFeatureTag.Smcp, 1));
 
             return new Product
             {
@@ -177,9 +177,9 @@ namespace Aurigma.DesignAtoms.Samples.Code
 
                             new SurfaceContainer(new Collection<BaseItem>
                             {
-                                new ImageItem(new FileInfo(HostingEnvironment.MapPath("~/assets/images/spaceman.pdf")), 
-                                    location: new PointF(printAreaX + 60, printAreaY + 92), 
-                                    width: 338, 
+                                new ImageItem(new FileInfo(HostingEnvironment.MapPath("~/assets/images/spaceman.pdf")),
+                                    location: new PointF(printAreaX + 60, printAreaY + 92),
+                                    width: 338,
                                     height: 442)
                             })
                             {
