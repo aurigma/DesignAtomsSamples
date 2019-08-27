@@ -1,10 +1,12 @@
-﻿using System.Drawing;
-using System.IO;
-using System.Web.Hosting;
-using Aurigma.DesignAtoms.Canvas.Collection;
+﻿using Aurigma.DesignAtoms.Canvas.Collection;
 using Aurigma.DesignAtoms.Model;
 using Aurigma.DesignAtoms.Model.Items;
+using Aurigma.GraphicsMill;
 using Aurigma.GraphicsMill.AdvancedDrawing;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Web.Hosting;
 using Path = Aurigma.DesignAtoms.Common.Math.Path;
 using PointF = System.Drawing.PointF;
 using Utils = Aurigma.DesignAtoms.Common.Utils;
@@ -40,15 +42,15 @@ namespace Aurigma.DesignAtoms.Samples.Code
         {
             var swash = new BoundedTextItem(TestText.LoremIpsum,
                 new RectangleF(20f, 20f, 350, 180), "Nautilus Pompilius", 15);
-            swash.Font.OpenTypeFeatures.Add(OpenTypeFeature.Swsh);
+            swash.Font.OpenTypeFeatures.Add(new OpenTypeFeature(OpenTypeFeatureTag.Swsh, 1));
 
             var ligature = new BoundedTextItem(TestText.LoremIpsum,
                 new RectangleF(20f, 220f, 350, 180), "Nautilus Pompilius", 15);
-            ligature.Font.OpenTypeFeatures.Add(OpenTypeFeature.Dlig);
+            ligature.Font.OpenTypeFeatures.Add(new OpenTypeFeature(OpenTypeFeatureTag.Dlig, 1));
 
             var smallCaps = new BoundedTextItem(TestText.LoremIpsum,
                 new RectangleF(20f, 420f, 350, 180), "Montserrat-Regular", 15);
-            smallCaps.Font.OpenTypeFeatures.Add(OpenTypeFeature.Smcp);
+            smallCaps.Font.OpenTypeFeatures.Add(new OpenTypeFeature(OpenTypeFeatureTag.Smcp, 1));
 
             return new Product
             {
@@ -138,6 +140,63 @@ namespace Aurigma.DesignAtoms.Samples.Code
             };
 
             return new Product { Surfaces = { surface } };
+        }
+
+        public static Product CreateMockupProduct()
+        {
+            var surfWidth = 1437f;
+            var surfHeight = 1210f;
+
+            var printAreaX = 489f;
+            var printAreaY = 292f;
+            var printAreaW = 459f;
+            var printAreaH = 489f;
+            var margin = 25f;
+
+            var bgItemRectangle = new RectangleF(printAreaX, printAreaY, printAreaW, printAreaH);
+
+            return new Product
+            {
+                Surfaces =
+                {
+                    new Surface(surfWidth, surfHeight)
+                    {
+                        PrintAreas = { new PrintArea(new RectangleF(printAreaX, printAreaY, printAreaW, printAreaH))},
+                        Containers =
+                        {
+                            new SurfaceContainer(locked: true, items: new Collection<BaseItem>
+                            {
+                                new PlaceholderItem(new ImageItem { SourceRectangle = bgItemRectangle, FillColor = RgbColor.Transparent }, bgItemRectangle)
+                                {
+                                    ContentResizeMode = PlaceholderItem.ResizeMode.Fill
+                                }
+                            })
+                            {
+                                Name = Common.Utils.BgContainerName,
+                            },
+
+                            new SurfaceContainer(new Collection<BaseItem>
+                            {
+                                new ImageItem(new FileInfo(HostingEnvironment.MapPath("~/assets/images/spaceman.pdf")),
+                                    location: new PointF(printAreaX + 60, printAreaY + 92),
+                                    width: 338,
+                                    height: 442)
+                            })
+                            {
+                                Name = Utils.MainContainerName
+                            }
+
+                        },
+                        Mockup = new SurfaceMockup(new Collection<MockupContainer>
+                        {
+                            new MockupContainer(new List<BaseItem>
+                                {
+                                    new ImageItem(new FileInfo(HostingEnvironment.MapPath("~/assets/mockups/white.jpg")))
+                                })
+                        })
+                    }
+                }
+            };
         }
     }
 }

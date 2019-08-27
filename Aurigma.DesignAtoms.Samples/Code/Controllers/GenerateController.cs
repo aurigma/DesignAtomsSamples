@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -9,6 +11,7 @@ using Aurigma.DesignAtoms.Common;
 using Aurigma.DesignAtoms.Model;
 using Aurigma.DesignAtoms.Model.Items;
 using Aurigma.DesignAtoms.Serialization;
+using Aurigma.GraphicsMill;
 using Newtonsoft.Json;
 
 namespace Aurigma.DesignAtoms.Samples.Code.Controllers
@@ -80,6 +83,9 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
                 case "open-type-feature":
                     product = DemoProducts.CreateOpenTypeFeaturesProduct();
                     break;
+                case "mockup":
+                    product = DemoProducts.CreateMockupProduct();
+                    break;
             }
 
             if (product == null)
@@ -89,7 +95,7 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
                     Content = new StringContent("Cannot found the specified product", Encoding.UTF8)
                 };
             }
-            
+
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent(JsonConvert.SerializeObject(product, _productJsonConverter), Encoding.UTF8, "application/json")

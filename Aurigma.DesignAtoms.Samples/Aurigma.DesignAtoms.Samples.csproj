@@ -45,14 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aurigma.DesignAtoms, Version=5.3.0.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.DesignAtoms.5.3.0\lib\net45\Aurigma.DesignAtoms.dll</HintPath>
+    <Reference Include="Aurigma.DesignAtoms, Version=5.7.1.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.DesignAtoms.5.7.1\lib\net45\Aurigma.DesignAtoms.dll</HintPath>
     </Reference>
-    <Reference Include="Aurigma.GraphicsMill, Version=10.0.114.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=AMD64">
-      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x64.10.0.114\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
+    <Reference Include="Aurigma.GraphicsMill, Version=10.1.7.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=AMD64">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x64.10.1.7\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
     </Reference>
-    <Reference Include="Aurigma.GraphicsMill.Templates, Version=10.0.114.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.GraphicsMill.Templates.x64.10.0.114\lib\net40\Aurigma.GraphicsMill.Templates.dll</HintPath>
+    <Reference Include="Aurigma.GraphicsMill.Templates, Version=10.1.7.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Templates.x64.10.1.7\lib\net40\Aurigma.GraphicsMill.Templates.dll</HintPath>
     </Reference>
     <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
@@ -127,8 +127,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="tar-cs, Version=5.3.0.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aurigma.DesignAtoms.5.3.0\lib\net45\tar-cs.dll</HintPath>
+    <Reference Include="tar-cs, Version=5.7.1.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aurigma.DesignAtoms.5.7.1\lib\net45\tar-cs.dll</HintPath>
     </Reference>
     <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
@@ -138,12 +138,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\designs\single\Document fonts\AdobeFnt19.lst" />
+    <Content Include="assets\designs\single\Links\bag.png" />
+    <Content Include="assets\designs\single\Links\bg.jpg" />
+    <Content Include="assets\images\01.jpg" />
+    <Content Include="assets\images\02.jpg" />
+    <Content Include="assets\images\03.jpg" />
+    <Content Include="assets\mockups\black.jpg" />
+    <Content Include="assets\mockups\blue.jpg" />
+    <Content Include="assets\mockups\green.jpg" />
+    <Content Include="assets\mockups\red.jpg" />
+    <Content Include="assets\mockups\white.jpg" />
+    <Content Include="assets\photo.jpg" />
+    <Content Include="assets\test-page-round.png" />
+    <Content Include="assets\test-page-square.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\Montserrat\OFL.txt" />
+    <Content Include="fonts\Roboto\Apache License.txt" />
     <Content Include="Global.asax" />
     <Content Include="assets\image.jpg" />
     <Content Include="assets\test-page.jpg" />
     <Content Include="Index.html" />
     <Content Include="samples\backend\Index.html" />
     <Content Include="samples\backend\style.css" />
+    <Content Include="samples\background-backend\images\01.png" />
+    <Content Include="samples\background-backend\images\02.png" />
+    <Content Include="samples\background-backend\images\03.png" />
+    <Content Include="samples\background-backend\index.html" />
+    <Content Include="samples\background-backend\style.css" />
+    <Content Include="samples\mockup-backend\images\black.png" />
+    <Content Include="samples\mockup-backend\images\blue.png" />
+    <Content Include="samples\mockup-backend\images\green.png" />
+    <Content Include="samples\mockup-backend\images\red.png" />
+    <Content Include="samples\mockup-backend\images\white.png" />
+    <Content Include="samples\mockup-backend\index.html" />
+    <Content Include="samples\mockup-backend\style.css" />
     <Content Include="samples\curved-text\index.html" />
     <Content Include="samples\demo\Index.html" />
     <Content Include="samples\demo\style.css" />
@@ -156,6 +185,16 @@
     <Content Include="samples\state-fonts\Index.html" />
     <Content Include="samples\state-fonts\style.css" />
     <Content Include="samples\vector-mask\index.html" />
+    <Content Include="scripts\Bundles\backend.js" />
+    <Content Include="scripts\Bundles\background-backend.js" />
+    <Content Include="scripts\Bundles\curved-text.js" />
+    <Content Include="scripts\Bundles\demo.js" />
+    <Content Include="scripts\Bundles\events-demo.js" />
+    <Content Include="scripts\Bundles\mockup-backend.js" />
+    <Content Include="scripts\Bundles\open-type-feature.js" />
+    <Content Include="scripts\Bundles\pdf-box-backend.js" />
+    <Content Include="scripts\Bundles\state-fonts.js" />
+    <Content Include="scripts\Bundles\vector-mask.js" />
     <Content Include="styles\demo.css" />
     <Content Include="styles\logo.svg" />
     <Content Include="styles\style.css" />
@@ -165,12 +204,16 @@
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Controllers\MockupController.cs" />
+    <Compile Include="Code\Controllers\BackgroundController.cs" />
     <Compile Include="Code\Controllers\GenerateController.cs" />
     <Compile Include="Code\Controllers\SafetyLinesController.cs" />
     <Compile Include="Code\Controllers\TemplateController.cs" />
     <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Code\Controllers\StateController.cs" />
     <Compile Include="Code\DemoProducts.cs" />
+    <Compile Include="Code\Models\ColorRequestData.cs" />
+    <Compile Include="Code\Models\PictureRequestData.cs" />
     <Compile Include="Code\TextSamples.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,9 +222,57 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
+    <Content Include="fonts\Montserrat\Montserrat-Black.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Light.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="fonts\nautilus\Nautilus.otf" />
+    <Content Include="fonts\Raleway-Black.ttf" />
+    <Content Include="fonts\Roboto-Black_0.ttf" />
+    <Content Include="fonts\Roboto-Medium_0.ttf" />
+    <Content Include="fonts\Roboto-Regular_0.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Black.ttf" />
+    <Content Include="fonts\Roboto\Roboto-BlackItalic.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Bold.ttf" />
+    <Content Include="fonts\Roboto\Roboto-BoldItalic.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Italic.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Light.ttf" />
+    <Content Include="fonts\Roboto\Roboto-LightItalic.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Medium.ttf" />
+    <Content Include="fonts\Roboto\Roboto-MediumItalic.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Regular.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Thin.ttf" />
+    <Content Include="fonts\Roboto\Roboto-ThinItalic.ttf" />
+    <Content Include="ColorProfiles\defaultCmykProfile.icm" />
+    <Content Include="ColorProfiles\defaultGrayscaleProfile.icm" />
+    <Content Include="assets\designs\bc.idml" />
+    <Content Include="assets\designs\single\Document fonts\Raleway-Black.ttf" />
+    <Content Include="assets\designs\single\Document fonts\Roboto-Black_0.ttf" />
+    <Content Include="assets\designs\single\Document fonts\Roboto-Medium_0.ttf" />
+    <Content Include="assets\designs\single\Document fonts\Roboto-Regular_0.ttf" />
+    <Content Include="assets\designs\single\flyer.idml" />
+    <Content Include="assets\designs\spaceman.psd" />
+    <Content Include="assets\designs\test-page.psd" />
+    <Content Include="assets\images\spaceman.pdf" />
+    <Content Include="App_Data\states\state-fonts.st" />
     <None Include="packages.config" />
     <Content Include="tsconfig.json" />
     <Content Include="samples\state-fonts\state-fonts.st" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -194,6 +285,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="samples\backend\index.ts" />
+    <TypeScriptCompile Include="samples\background-backend\index.ts" />
+    <TypeScriptCompile Include="samples\mockup-backend\index.ts" />
     <TypeScriptCompile Include="samples\curved-text\index.ts" />
     <TypeScriptCompile Include="samples\demo\index.ts" />
     <TypeScriptCompile Include="samples\events-demo\index.ts" />
