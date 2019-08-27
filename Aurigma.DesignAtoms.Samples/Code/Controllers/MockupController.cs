@@ -1,17 +1,18 @@
-﻿using System.IO;
+﻿using Aurigma.DesignAtoms.Canvas;
+using Aurigma.DesignAtoms.Canvas.ItemHandlers;
+using Aurigma.DesignAtoms.Configuration;
+using Aurigma.DesignAtoms.Model;
+using Aurigma.DesignAtoms.Model.Items;
+using Aurigma.DesignAtoms.Samples.Code.Models;
+using Aurigma.DesignAtoms.Serialization;
+using Aurigma.DesignAtoms.Storage.FileCache;
+using Newtonsoft.Json;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http;
-using Aurigma.DesignAtoms.Canvas;
-using Aurigma.DesignAtoms.Canvas.ItemHandlers;
-using Aurigma.DesignAtoms.Configuration;
-using Aurigma.DesignAtoms.Model;
-using Aurigma.DesignAtoms.Model.Items;
-using Aurigma.DesignAtoms.Serialization;
-using Aurigma.DesignAtoms.Storage.FileCache;
-using Newtonsoft.Json;
 
 namespace Aurigma.DesignAtoms.Samples.Code.Controllers
 {
@@ -22,7 +23,6 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
         private readonly IConfiguration _configuration;
         private readonly ImageLoader _imageLoader;
         private readonly ItemHandlerFactory _itemHandlerFactory;
-        
 
         public MockupController(ProductJsonConverter productJsonConverter, IFileCache fileCache, IConfiguration configuration, ImageLoader imageLoader)
         {
@@ -33,25 +33,13 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
             _itemHandlerFactory = new ItemHandlerFactory(_configuration, _fileCache, null, _imageLoader, null, null);
         }
 
-        public class ColorRequestData
-        {
-            public Product Product;
-            public string Color;
-        }
-
-        public class PictureRequestData
-        {
-            public Product Product;
-            public string PictureUrl;
-        }
-        
         [HttpPost]
         public HttpResponseMessage Mockup([FromBody] PictureRequestData data)
         {
             var product = data.Product;
             var surface = product.Surfaces.First();
             var mockupContainer = surface.Mockup.UnderContainers[0];
-            var mockupUrl = data.PictureUrl;
+            var mockupUrl = data.PicturePath;
             var filepath = System.Web.Hosting.HostingEnvironment.MapPath(mockupUrl);
 
             var newSource = new ImageItem.ImageSource(new FileInfo(filepath), 0);

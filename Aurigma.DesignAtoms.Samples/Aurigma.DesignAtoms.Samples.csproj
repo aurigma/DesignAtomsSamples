@@ -177,6 +177,8 @@
     <Compile Include="Code\Controllers\RenderController.cs" />
     <Compile Include="Code\Controllers\StateController.cs" />
     <Compile Include="Code\DemoProducts.cs" />
+    <Compile Include="Code\Models\ColorRequestData.cs" />
+    <Compile Include="Code\Models\PictureRequestData.cs" />
     <Compile Include="Code\TextSamples.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

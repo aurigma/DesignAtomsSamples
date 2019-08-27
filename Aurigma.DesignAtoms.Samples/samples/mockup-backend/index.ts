@@ -31,7 +31,7 @@ class MockupEditor {
         document.getElementById("delete-mockup").addEventListener("click", this.deleteMockup.bind(this));
     }
     
-    async changeMockup(mokcup: string) {
+    async changeMockup(mockup: string) {
         const viewer = window.designAtoms.viewer;
         const serializer = new JsonProductSerializer();
         const serializedProduct = serializer.serialize(new Product([viewer.surface]));
@@ -44,7 +44,7 @@ class MockupEditor {
                 "Content-Type": "application/json"
             },
 
-            body: `{ "Product": ${serializedProduct}, "PictureUrl": ${JSON.stringify(mokcup)} }`
+            body: `{ "Product": ${serializedProduct}, "PicturePath": ${JSON.stringify(mockup)} }`
         });
 
         const data = await response.json();
