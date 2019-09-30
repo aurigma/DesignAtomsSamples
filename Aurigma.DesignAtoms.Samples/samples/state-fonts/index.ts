@@ -1,6 +1,5 @@
-﻿import { Helper } from "../../scripts";
+﻿import { Helper, backendUrl } from "../../scripts";
 
-const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -45,10 +44,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function updateFonts(state: string) {
-    const response = await fetch(`/api/states/${state}/fonts`);
+    const response = await fetch(`../../api/states/${state}/fonts`);
     const fonts = await response.json();
-    console.log(fonts);
-
+ 
     const fontsListElement = <HTMLTextAreaElement>document.getElementById("fonts");
     fontsListElement.value = fonts.join("\n");
 

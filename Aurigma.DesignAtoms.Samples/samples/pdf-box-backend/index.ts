@@ -1,16 +1,15 @@
 ﻿import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Serializer/JsonProductSerializer";
 import { Product, PdfBox } from "@aurigma/design-atoms/Model/Product";
 import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
-import { Helper } from "../../scripts";
+import { Helper, backendUrl } from "../../scripts";
 
-const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const holderElement = document.querySelector(holderElementId) as HTMLDivElement;
 
     const viewer = Helper.initViewer(backendUrl, holderElement);
-    const product = await Helper.loadProduct("/api/Generate");
+    const product = await Helper.loadProduct("../../api/Generate");
 
     viewer.surface = product.surfaces.get(0);
     
@@ -55,13 +54,13 @@ class SafetyLineEditor {
 
         const serializedSafetyLineData = JSON.stringify(this.safetyLineData);
 
-        const response = await fetch('/api/safetyLines',
+        const response = await fetch('../../api/safetyLines',
             {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                method: "PUT",
+                method: "POST",
                 body: `{ product: ${serializedProduct}, safetyLineData: ${serializedSafetyLineData} }`
             });
 

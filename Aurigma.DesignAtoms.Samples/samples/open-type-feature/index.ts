@@ -1,7 +1,6 @@
 ﻿import { BaseTextItemHandler, OpenTypeFeature } from "@aurigma/design-atoms/ItemHandlers/BaseTextItemHandler";
-import { Helper } from "../../scripts/Helper";
+import { Helper, backendUrl } from "../../scripts";
 
-const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 const sidebarToggleButtonDownClass = "sidebar__toggle__button__down";
 const openTypeFeatureDataSetKey = "otf";
@@ -71,7 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Load product from server
-    const product = await Helper.loadProduct("/api/products/open-type-feature");
+    const product = await Helper.loadProduct("../../api/products/open-type-feature");
 
     viewer.surface = product.surfaces.get(0);
 });

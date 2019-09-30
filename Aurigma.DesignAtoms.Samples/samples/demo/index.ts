@@ -5,7 +5,7 @@ import { RgbColor } from "@aurigma/design-atoms/Colors";
 import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
 import { PlainTextItem, TextAlignment, BaseTextItem, TextVerticalAlignment, BoundedTextItem, ImageItem } from "@aurigma/design-atoms/Model/Product/Items";
 import { Canvas } from "@aurigma/design-atoms/Canvas";
-import { Helper } from "../../scripts/Helper";
+import { Helper, backendUrl } from "../../scripts";
 
 export function InitViewer(backendUrl: string, holder: HTMLDivElement) {
     const viewer = new Viewer({
@@ -105,7 +105,6 @@ function initCanvas(canvas: Canvas) {
     canvas.doneButtonCssClass = "cc-icon-placeholder-done";
 }
 
-const backendUrl = "http://localhost:60669";
 const holderId = "#viewer";
 
 document.addEventListener("DOMContentLoaded", () => {

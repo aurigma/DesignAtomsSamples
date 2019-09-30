@@ -1,9 +1,8 @@
 ﻿import { Path } from "@aurigma/design-atoms/Math";
 import { ItemMask } from "@aurigma/design-atoms/Model/Product";
 import { ShapeItem } from "@aurigma/design-atoms/Model/Product/Items";
-import { Helper } from "../../scripts/Helper";
+import { Helper, backendUrl } from "../../scripts";
 
-const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -43,11 +42,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (selectedHandlers == null || selectedHandlers.get(0).item.mask == null)
                 return;
 
-            selectedHandlers.get(0).item.mask = null;
+            selectedHandlers.get(0).item.mask.vectorMask = null
         });
 
     // Load product from server
-    const product = await Helper.loadProduct("/api/products/vector-mask");
+    const product = await Helper.loadProduct("../../api/products/vector-mask");
 
     viewer.surface = product.surfaces.get(0);
 });
