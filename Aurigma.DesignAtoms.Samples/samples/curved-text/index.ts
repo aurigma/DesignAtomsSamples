@@ -2,9 +2,8 @@
 import { Product, Surface, PrintArea, SurfaceContainer } from "@aurigma/design-atoms/Model/Product";
 import { CurvedTextItem } from "@aurigma/design-atoms/Model/Product/Items";
 import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
-import { Helper } from "../../scripts/Helper";
+import { Helper, backendUrl } from "../../scripts";
 
-const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .addEventListener("click", async () => await Helper.render(viewer.surface, "hires.pdf"));
 
     document.getElementById("load")
-        .addEventListener("click", () => Helper.loadProduct("/api/products/curved-text").then(product => viewer.surface = product.surfaces.get(0)));
+        .addEventListener("click", () => Helper.loadProduct("../../api/products/curved-text").then(product => viewer.surface = product.surfaces.get(0)));
     
     document.getElementById("add-text")
         .addEventListener("click", () =>

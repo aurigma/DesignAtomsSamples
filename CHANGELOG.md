@@ -1,5 +1,19 @@
 # Design Atoms Samples Project Changelog
 
+## 08/27/2019 - New demos and upgrade Design Atoms to 5.7.1
+
+_**IMPORTANT! Make sure that you restore NuGet packages and update npm packages before compiling the project. Now it requires Design Atoms 5.7.1. **_
+
+### New demos
+
+- **change-background** demo - explains how to change the background to a color or image
+- **change-mockup** demo - explains how to apply or remove mockup.
+
+### Updating old demos
+
+- **open-type-feature** demo has been updated in accordance with the new data model
+
+
 ## 05/29/2019 - New features of Design Atoms 5.0.1
 
 _**IMPORTANT! Make sure that you restore NuGet packages and update npm packages before compiling the project. Now it requires Design Atoms 5.0.1. **_

@@ -1,15 +1,14 @@
 import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Serializer/JsonProductSerializer";
 import { Product } from "@aurigma/design-atoms/Model/Product";
-import { Helper } from "../../scripts";
+import { Helper, backendUrl } from "../../scripts";
 
-const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const holderElement = document.querySelector(holderElementId) as HTMLDivElement;
 
     const viewer = Helper.initViewer(backendUrl, holderElement);
-    const product = await Helper.loadProduct("/api/products/mockup");
+    const product = await Helper.loadProduct("../../api/products/mockup");
 
     viewer.surface = product.surfaces.get(0);
     const mockupEditor = new MockupEditor();
@@ -36,7 +35,7 @@ class MockupEditor {
         const serializer = new JsonProductSerializer();
         const serializedProduct = serializer.serialize(new Product([viewer.surface]));
         
-        const response = await fetch("/api/mockup/Mockup", {
+        const response = await fetch("../../api/mockup/Mockup", {
             method: "POST",
 
             headers: {
@@ -59,7 +58,7 @@ class MockupEditor {
         const serializer = new JsonProductSerializer();
         const serializedProduct = serializer.serialize(new Product([viewer.surface]));
 
-        const response = await fetch("/api/mockup/DeleteMockup", {
+        const response = await fetch("../../api/mockup/DeleteMockup", {
             method: "POST",
 
             headers: {

@@ -6,9 +6,8 @@ import { ItemHandler } from "@aurigma/design-atoms/ItemHandlers";
 import { RgbColor } from "@aurigma/design-atoms/Colors";
 import { BaseItem, BaseTextItem, PlainTextItem, BoundedTextItem, ImageItem, TextAlignment } from "@aurigma/design-atoms/Model/Product/Items";
 import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
-import { Helper } from "../../scripts/Helper";
+import { Helper, backendUrl } from "../../scripts";
 
-const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 
 document.addEventListener("DOMContentLoaded", () => {

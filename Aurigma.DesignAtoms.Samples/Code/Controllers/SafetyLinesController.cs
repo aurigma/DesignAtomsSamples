@@ -20,7 +20,7 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
             _productJsonConverter = productJsonConverter;
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("api/safetyLines")]
         public HttpResponseMessage ChangeSafetyLine([FromBody] RequestData data)
         {

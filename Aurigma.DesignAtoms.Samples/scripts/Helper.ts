@@ -66,7 +66,7 @@ export class Helper {
     }
 
     static async render(surface: Surface, fileName: string) {
-        const url = `/api/Render/${fileName.split(".").pop()}`;
+        const url = `../../api/Render/${fileName.split(".").pop()}`;
 
         const serializedProduct = new JsonProductSerializer().serialize(new Product([surface]));
 
@@ -130,12 +130,12 @@ export class Helper {
     }
 
     static async getStates() : Promise<string[]> {
-        const response = await fetch("/api/State/AllStates");
+        const response = await fetch("../../api/State/AllStates");
         return await response.json();
     }
 
     async updateProductViewer(productName: string) {
-        fetch(`/api/Generate/${productName}`)
+        fetch(`../../api/Generate/${productName}`)
             .then(data => data.json())
             .then(data => {
                 const product = this._serializer.deserialize(data);
@@ -147,7 +147,7 @@ export class Helper {
         const surface = this._viewer.surface;
         const product = new Product([surface]);
         const req = this._serializer.serialize(product);
-        fetch(`/api/State/Serialize/${id}`, {
+        fetch(`../../api/State/Serialize/${id}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -160,7 +160,7 @@ export class Helper {
             });
     }
     async loadState(id: string) {
-        fetch(`/api/State/Deserialize/${id}`)
+        fetch(`../../api/State/Deserialize/${id}`)
             .then(data => data.json())
             .then(data => {
                 const product = this._serializer.deserialize(data);

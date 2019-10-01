@@ -1,6 +1,5 @@
-﻿import { Helper, ProductFactory } from "../../scripts";
+﻿import { Helper, ProductFactory, backendUrl } from "../../scripts";
 
-const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -51,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const selectedDesign = designsSelectElement.selectedOptions[0].value;
 
             if (selectedDesign !== "") {
-                const url = `/api/template/product?filePath=${selectedDesign}`;
+                const url = `../../api/template/product?filePath=${selectedDesign}`;
 
                 const product = await Helper.loadProduct(url);
 
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         });
 
-    const response = await fetch("/api/template/designs");
+    const response = await fetch("../../api/template/designs");
     const designs: {name: string, path: string }[] = await response.json();
 
     designs.forEach(d => {

@@ -1,15 +1,14 @@
 ﻿import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Serializer/JsonProductSerializer";
 import { Product } from "@aurigma/design-atoms/Model/Product";
-import { Helper } from "../../scripts";
+import { Helper, backendUrl } from "../../scripts";
 
-const backendUrl = "http://localhost:60669";
 const holderElementId = "#viewer";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const holderElement = document.querySelector(holderElementId) as HTMLDivElement;
 
     const viewer = Helper.initViewer(backendUrl, holderElement);
-    const product = await Helper.loadProduct("/api/template/product?filePath=spaceman.psd");
+    const product = await Helper.loadProduct("../../api/template/product?filePath=spaceman.psd");
 
     viewer.surface = product.surfaces.get(0);
     
@@ -43,7 +42,7 @@ class BackgroundEditor {
         const serializer = new JsonProductSerializer();
         const serializedProduct = serializer.serialize(new Product([viewer.surface]));
 
-        const response = await fetch('/api/background/color', {
+        const response = await fetch('../../api/background/color', {
             method: "POST",
 
             headers: {
@@ -66,7 +65,7 @@ class BackgroundEditor {
         const serializer = new JsonProductSerializer();
         const serializedProduct = serializer.serialize(new Product([viewer.surface]));
 
-        const response = await fetch("/api/background/picture", {
+        const response = await fetch("../../api/background/picture", {
             method: "POST",
 
             headers: {
@@ -89,7 +88,7 @@ class BackgroundEditor {
         const serializer = new JsonProductSerializer();
         const serializedProduct = serializer.serialize(new Product([viewer.surface]));
 
-        const response = await fetch("/api/background/DeletePicture", {
+        const response = await fetch("../../api/background/DeletePicture", {
             method: "POST",
 
             headers: {
