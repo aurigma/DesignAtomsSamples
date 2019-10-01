@@ -2,6 +2,11 @@
 
 ## 09/30/2019 - Update Vector Mask Demo and upgrade Design Atoms to 5.10.0
 
+Up to date list of demos in the readme file. Added website with online demo.
+
+### Updating old demos
+- **vector-mask** demo correctly removes vector mask from items.
+
 ## 08/27/2019 - New demos and upgrade Design Atoms to 5.7.1
 
 _**IMPORTANT! Make sure that you restore NuGet packages and update npm packages before compiling the project. Now it requires Design Atoms 5.7.1. **_
