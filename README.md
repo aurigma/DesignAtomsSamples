@@ -21,6 +21,10 @@ You may find some documentation here:
 This is a sample C#/TypeScript project for Customer's Canvas Design Atoms Framework. It demonstrates how to create a back end for Design Atoms and you can solve various image manipulation tasks at both front end (TypeScript) and back end (C#) using Design Atoms Framework.
 
 From time to time we update the project and add new demos/samples. See the [CHANGELOG](CHANGELOG.md) for details.  
+
+## Online Demo
+
+You can [try this demo here.](https://h2.customerscanvas.com/online-demo/design-atoms-samples/)
  
 ## How to get started? 
  
@@ -60,13 +64,6 @@ An example how to use back end and front end libraries together. It demonstrates
 - Loading a template from IDML or PSD file
 - Rendering a design as JPEG and PDF on the server
 - Serialization/deserialization of a design to a file system (i.e. save/restore using its own file format). 
- 
-### open-type-feature
-
-An example how to work with OpenType Features of a text (such as ligatures, swash, all caps/small caps, subscript/superscript and many more). It demonstrates: 
-
-- Adding or removing OpenType Feature from a text element on a client and server side
-- Reading OpenType Features and updating the user interface based on them.
 
 ### vector-mask
 
@@ -82,6 +79,13 @@ A demo for the curved text feature. It demonstrates how to do the following (bot
 - Create a curved text element based on a path and a text 
 - Apply it both for the plain text and rich formatted text
 
+### open-type-feature
+
+An example how to work with OpenType Features of a text (such as ligatures, swash, all caps/small caps, subscript/superscript and many more). It demonstrates: 
+
+- Adding or removing OpenType Feature from a text element on a client and server side
+- Reading OpenType Features and updating the user interface based on them.
+
 ### events-demo
 
 An example how you can detect changes in the design as well as get a selected item. The following features is illustrated: 
@@ -91,6 +95,33 @@ An example how you can detect changes in the design as well as get a selected it
 - Receiving old and new values
 - Detecting adding/removing elements
 - Detecting element selection
+
+### pdf-box-backend
+
+An example how you can specify safety lines at server side. The following features is illustrated: 
+
+- Set trim box
+- Set crop box
+- Set bleed box
+
+### state-fonts-backend
+
+An example how you can get list of used fonts from state file at server side.
+
+### mockup-backend
+
+An example how you can set and delete mockup at server side. The following features is illustrated:
+
+- Set image as mockup
+- Delete mockup
+
+### background-backend
+ 
+An example how you can set and delete background at server side. The following features is illustrated:
+ 
+- Set color as background
+- Set image as background
+- Delete background
 
 ## Questions? 
  
