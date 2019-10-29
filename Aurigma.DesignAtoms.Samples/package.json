@@ -19,7 +19,8 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "@aurigma/design-atoms": "5.10.0"
+    "@aurigma/design-atoms": "5.10.0",
+    "mixin-deep": "1.3.2"
   },
   "-vs-binding": {
     "AfterBuild": [
