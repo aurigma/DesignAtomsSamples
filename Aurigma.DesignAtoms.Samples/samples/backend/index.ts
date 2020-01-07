@@ -18,11 +18,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const statesElement = document.getElementById("states") as HTMLSelectElement;
     
     document.getElementById("save-state")
-        .addEventListener("click", () => {
-            const stateName = (<HTMLInputElement>document.getElementById("state-name")).value;
-            if (stateName !== "") {
-                helper.saveState(stateName);
+        .addEventListener("click", async () => {
+            const stateNameElement = document.getElementById("state-name") as HTMLInputElement;
+            if (stateNameElement.value !== "") {
+                await helper.saveState(stateNameElement.value);
                 updateStates(statesElement);
+                stateNameElement.value = "";
             } else {
                 alert("Please enter state name");
             }
@@ -70,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         designsSelectElement.add(optionElement);
     });
 
-    updateStates(statesElement);
+    await updateStates(statesElement);
 });
 
 function addOptions(selectElement: HTMLSelectElement, options: string[]) {
@@ -83,8 +84,12 @@ function addOptions(selectElement: HTMLSelectElement, options: string[]) {
 }
 
 async function updateStates(statesElement: HTMLSelectElement) {
-    for (let i = 1; i < statesElement.options.length; i++) {
-        statesElement.options[i] = null;
+
+    while (statesElement.options.length > 0 && !statesElement.options[statesElement.options.length - 1].disabled) {
+        let lastIndex = statesElement.options.length - 1;
+        if (!statesElement.options[lastIndex].disabled) {
+            statesElement.options.remove(lastIndex);
+        }
     }
 
     const states = await Helper.getStates();
