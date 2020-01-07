@@ -147,20 +147,18 @@ export class Helper {
         const surface = this._viewer.surface;
         const product = new Product([surface]);
         const req = this._serializer.serialize(product);
-        fetch(`../../api/State/Serialize/${id}`, {
+        var data = await fetch(`../../api/State/Serialize/${id}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             method: "POST",
             body: `{ product: ${req} }`
-        })
-            .then(data => {
-                console.log(data);
-            });
+        });
+        console.log(data);
     }
     async loadState(id: string) {
-        fetch(`../../api/State/Deserialize/${id}`)
+        await fetch(`../../api/State/Deserialize/${id}`)
             .then(data => data.json())
             .then(data => {
                 const product = this._serializer.deserialize(data);

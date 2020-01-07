@@ -151,7 +151,7 @@ namespace Aurigma.DesignAtoms.Samples.Code
             var printAreaY = 292f;
             var printAreaW = 459f;
             var printAreaH = 489f;
-            var margin = 25f;
+            //var margin = 25f;
 
             var bgItemRectangle = new RectangleF(printAreaX, printAreaY, printAreaW, printAreaH);
 

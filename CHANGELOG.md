@@ -1,5 +1,15 @@
 # Design Atoms Samples Project Changelog
 
+## 01/07/2020 - Upgrade Design Atoms to 5.17.1 and New Import Sample
+
+Updated Design Atoms to the latest 5.17.1 version. 
+
+Added a new sample - **import**. It demonstrates how to import PSD or IDML files to states. In the user interface, you have a file input which allows uploading a PSD or IDML template. The States controller now has an Import action which demonstrates how you can convert these files to State files and save them.  
+
+## 10/31/2019 - Upgrade Design Atoms to 5.12.1
+
+Updated Design Atoms to 5.12.1. Several dependenices was updated to address the security warning of the `npm audit`.
+
 ## 09/30/2019 - Update Vector Mask Demo and upgrade Design Atoms to 5.10.0
 
 Up to date list of demos in the readme file. Added website with online demo.

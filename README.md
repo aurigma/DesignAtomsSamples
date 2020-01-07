@@ -123,6 +123,12 @@ An example how you can set and delete background at server side. The following f
 - Set image as background
 - Delete background
 
+### import
+ 
+An example how you can upload a PSD or IDML file (with embedded resources) and convert it to a state file at server side. You can use a controller implemented in this demo as an starting point if you want to use state files as a single design format used in Customer's Canvas.
+
+Note, for brevity, it does not implement any validations of the uploaded files. For example, if your PSD file won't have required fonts, it will throw an exception. 
+
 ## Questions? 
  
 If you have any problems or questions how to get started, feel free to post questions on [Customer's Canvas forum](https://forums.aurigma.com/yaf_topics44_Discussions--Customers-Canvas.aspx?src=github) or [submit a support ticket](https://customerscanvas.com/account/cases/add). 

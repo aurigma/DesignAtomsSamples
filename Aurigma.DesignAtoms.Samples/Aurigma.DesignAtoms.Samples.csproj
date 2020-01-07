@@ -160,6 +160,8 @@
     <Content Include="assets\image.jpg" />
     <Content Include="assets\test-page.jpg" />
     <Content Include="Index.html" />
+    <Content Include="samples\import\index.html" />
+    <Content Include="samples\import\style.css" />
     <Content Include="samples\backend\Index.html" />
     <Content Include="samples\backend\style.css" />
     <Content Include="samples\background-backend\images\01.png" />
@@ -285,6 +287,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="samples\import\index.ts" />
     <TypeScriptCompile Include="samples\backend\index.ts" />
     <TypeScriptCompile Include="samples\background-backend\index.ts" />
     <TypeScriptCompile Include="samples\mockup-backend\index.ts" />
