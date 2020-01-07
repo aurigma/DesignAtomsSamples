@@ -288,6 +288,12 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+Aurigma.DesignAtoms.Samples/App_Data/FileCache/**/*.*
+Aurigma.DesignAtoms.Samples/App_Data/Uploads/**/*.*
+
+
 # js files
+Aurigma.DesignAtoms.Samples/scripts/**/*.js
+Aurigma.DesignAtoms.Samples/samples/**/*.js
 Aurigma\.DesignAtoms\.Samples/scripts/**/*.js
 Aurigma\.DesignAtoms\.Samples/samples/**/*.js
