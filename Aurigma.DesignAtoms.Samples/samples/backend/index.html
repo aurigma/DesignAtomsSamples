@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Design Atoms Sample</title>
+    <link type="text/css" rel="stylesheet" href="../../styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="../../styles/demo.css" />
+    <link type="text/css" rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="../../scripts/bundles/backend.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__section header__section-logo">
+            <a href="https://customerscanvas.com" target="_blank">
+                <img class="header__logo" src="../../styles/logo.svg" alt="logo" />
+            </a>
+        </div>
+    </header>
+    <main class="main">
+        <div id="viewer-wrapper">
+            <div id="viewer"></div>
+            <div id="sidebar">
+                <fieldset class="sidebar__section">
+                    <legend>States</legend>
+                    <div class="sidebar__section">
+                        <select class="sidebar__select" id="states">
+                            <option selected disabled value="">Select state</option>
+                        </select>
+                        <button class="sidebar__button" id="load-state">Load from server</button>
+                    </div>
+                    <div class="sidebar__section">
+                        <input text class="sidebar__input" id="state-name" placeholder="Enter state name" />
+                        <button class="sidebar__button" id="save-state">Save as</button>
+                    </div>
+                </fieldset>
+
+                <fieldset class="sidebar__section">
+                    <legend>Designs</legend>
+                    <div class="sidebar__section">
+                        <select class="sidebar__select" id="designs">
+                            <option selected disabled value="">Select design</option>
+                        </select>
+                        <button class="sidebar__button" id="load-design">Load from server</button>
+                    </div>
+                </fieldset>
+
+                <div class="sidebar__section">
+                    <button class="sidebar__button" id="preview">Download Jpeg</button>
+                    <button class="sidebar__button" id="hi-res">Download PDF</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
