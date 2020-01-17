@@ -93,7 +93,7 @@ export class Helper {
         canvas.rotationGripColor = "rgb(255, 255, 255)";
         canvas.rotationGripLineColor = "rgb(48, 194, 255)";
         canvas.rotationGripLineLength = 10;
-        canvas.rotationGripSize = 6;
+        canvas.rotationGripSize = 24;
 
         canvas.selectionColor = "rgb(48, 194, 255)";
         canvas.selectionWidth = 1;
