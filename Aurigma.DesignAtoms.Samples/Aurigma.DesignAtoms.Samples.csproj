@@ -193,6 +193,7 @@
     <Content Include="scripts\Bundles\curved-text.js" />
     <Content Include="scripts\Bundles\demo.js" />
     <Content Include="scripts\Bundles\events-demo.js" />
+    <Content Include="scripts\Bundles\import.js" />
     <Content Include="scripts\Bundles\mockup-backend.js" />
     <Content Include="scripts\Bundles\open-type-feature.js" />
     <Content Include="scripts\Bundles\pdf-box-backend.js" />

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         helper: helper
     };
     const statesElement = document.getElementById("states") as HTMLSelectElement;
-    
+
     document.getElementById("save-state")
         .addEventListener("click", async () => {
             const stateNameElement = document.getElementById("state-name") as HTMLInputElement;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             for (let i = 0; i < fileSelector.files.length; i++) {
                 formData.append(fileSelector.files[i].name, fileSelector.files[i]);
             }
-            var response = await fetch("/api/states/import", {
+            var response = await fetch(backendUrl + "/api/states/import", {
                 method: "POST",
                 body: formData
             });
