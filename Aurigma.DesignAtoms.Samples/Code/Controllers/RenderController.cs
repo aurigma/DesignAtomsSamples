@@ -36,7 +36,7 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
             if (format.Equals("jpeg", StringComparison.InvariantCultureIgnoreCase) ||
                 format.Equals("jpg", StringComparison.InvariantCultureIgnoreCase))
             {
-                config.DefaultHiResOuputRendering.FileFormat = FileFormat.Jpeg;
+                config.DefaultHiResOutputRendering.FileFormat = FileFormat.Jpeg;
                 filename = "result.jpeg";
             }
 

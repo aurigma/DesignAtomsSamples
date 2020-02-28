@@ -105,6 +105,7 @@ export class Helper {
 
         canvas.handleButtonCssClass = "cc-icon-placeholder-handle";
         canvas.doneButtonCssClass = "cc-icon-placeholder-done";
+        canvas.simpleMode = false;
     }
 
     static initViewer(backendUrl: string, holderElement: HTMLDivElement) {
