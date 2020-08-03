@@ -19,7 +19,11 @@
     "ts-loader": "^6.2.1",
     "typescript": "3.0.1",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "kind-of": ">=6.0.3",
+    "minimist": ">=1.2.3",
+    "qs": ">=6.0.4",
+    "lodash": ">=4.17.19"
   },
   "dependencies": {
     "@aurigma/design-atoms": "5.21.0"
