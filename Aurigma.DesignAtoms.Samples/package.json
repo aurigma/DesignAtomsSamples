@@ -23,7 +23,8 @@
     "kind-of": ">=6.0.3",
     "minimist": ">=1.2.3",
     "qs": ">=6.0.4",
-    "lodash": ">=4.17.19"
+    "lodash": ">=4.17.19",
+    "serialize-javascript": ">=3.1.0"
   },
   "dependencies": {
     "@aurigma/design-atoms": "5.21.0"
