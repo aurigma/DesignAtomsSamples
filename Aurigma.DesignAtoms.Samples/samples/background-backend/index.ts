@@ -1,5 +1,5 @@
-﻿import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Serializer/JsonProductSerializer";
-import { Product } from "@aurigma/design-atoms/Model/Product";
+﻿import { JsonProductSerializer } from "@aurigma/design-atoms-model/Product/Serializer/JsonProductSerializer";
+import { Product } from "@aurigma/design-atoms-model/Product";
 import { Helper, backendUrl } from "../../scripts";
 
 const holderElementId = "#viewer";

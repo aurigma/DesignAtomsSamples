@@ -1,6 +1,6 @@
-﻿import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Serializer/JsonProductSerializer";
-import { Product, PdfBox } from "@aurigma/design-atoms/Model/Product";
-import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
+﻿import { JsonProductSerializer } from "@aurigma/design-atoms-model/Product/Serializer/JsonProductSerializer";
+import { Product, PdfBox } from "@aurigma/design-atoms-model/Product";
+import { assignProperties } from "@aurigma/design-atoms-model/Utils/Utils";
 import { Helper, backendUrl } from "../../scripts";
 
 const holderElementId = "#viewer";

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         helper: helper
     };
     const statesElement = document.getElementById("states") as HTMLSelectElement;
-    
+
     document.getElementById("save-state")
         .addEventListener("click", async () => {
             const stateNameElement = document.getElementById("state-name") as HTMLInputElement;
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
     const response = await fetch("../../api/template/designs");
-    const designs: {name: string, path: string }[] = await response.json();
+    const designs: { name: string, path: string }[] = await response.json();
 
     designs.forEach(d => {
         const optionElement = document.createElement("option");

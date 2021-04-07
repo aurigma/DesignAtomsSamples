@@ -1,9 +1,9 @@
 import { Viewer } from "@aurigma/design-atoms/Viewer/Viewer";
-import { Product, Surface, PrintArea, SafetyLine, SurfaceContainer, MockupContainer } from "@aurigma/design-atoms/Model/Product";
-import { RectangleF, PointF } from "@aurigma/design-atoms/Math";
-import { RgbColor } from "@aurigma/design-atoms/Colors";
-import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
-import { PlainTextItem, TextAlignment, BaseTextItem, BoundedTextItem, ImageItem } from "@aurigma/design-atoms/Model/Product/Items";
+import { Product, Surface, PrintArea, SafetyLine, SurfaceContainer, MockupContainer } from "@aurigma/design-atoms-model/Product";
+import { RectangleF, PointF } from "@aurigma/design-atoms-model/Math";
+import { RgbColor } from "@aurigma/design-atoms-model/Colors";
+import { assignProperties } from "@aurigma/design-atoms-model/Utils/Utils";
+import { PlainTextItem, TextAlignment, BaseTextItem, BoundedTextItem, ImageItem } from "@aurigma/design-atoms-model/Product/Items";
 import { Helper, backendUrl } from "../../scripts";
 
 function InitSurface(surface: Surface, backendUrl: string) {

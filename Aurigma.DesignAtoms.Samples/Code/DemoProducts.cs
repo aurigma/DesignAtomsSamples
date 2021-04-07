@@ -1,15 +1,15 @@
 ﻿using Aurigma.DesignAtoms.Canvas.Collection;
 using Aurigma.DesignAtoms.Model;
 using Aurigma.DesignAtoms.Model.Items;
+using Aurigma.DesignAtoms.Model.Math;
 using Aurigma.GraphicsMill;
 using Aurigma.GraphicsMill.AdvancedDrawing;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Web.Hosting;
-using Path = Aurigma.DesignAtoms.Common.Math.Path;
+using Path = Aurigma.DesignAtoms.Model.Math.Path;
 using PointF = System.Drawing.PointF;
-using Utils = Aurigma.DesignAtoms.Common.Utils;
 
 namespace Aurigma.DesignAtoms.Samples.Code
 {
@@ -28,10 +28,10 @@ namespace Aurigma.DesignAtoms.Samples.Code
                         {
                             new CurvedTextItem("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", Path.CreateEllipsePath(35, 50, 175, 175)),
                             new CurvedTextItem("<p>" +
-                                               "<span style=\"color:green\">Lorem ipsum dolor sit amet, </span>" +
+                                               "<span style=\"color:rgb(0,255,0)\">Lorem ipsum dolor sit amet, </span>" +
                                                "<span style=\"color:rgb(0,255,0)\">consectetur adipiscing elit, </span>" +
                                                "<span>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></p>",
-                                Path.CreateEllipsePath(195, 50, 175, 175))
+                                Path.CreateEllipsePath(195, 50, 175, 175)) { IsRichText = true }
                         })
                     }
                 }}
@@ -68,7 +68,7 @@ namespace Aurigma.DesignAtoms.Samples.Code
                                 ligature
                             })
                             {
-                                Name = Utils.MainContainerName
+                                Name = Const.MainContainerName
                             }
                         }
                     }
@@ -135,7 +135,7 @@ namespace Aurigma.DesignAtoms.Samples.Code
                 PrintAreas = { new PrintArea(new RectangleF(0, 0, 400, 200)) },
                 Containers =
                 {
-                    new SurfaceContainer(items) { Name = Common.Utils.MainContainerName }
+                    new SurfaceContainer(items) { Name = Const.MainContainerName }
                 }
             };
 
@@ -172,18 +172,19 @@ namespace Aurigma.DesignAtoms.Samples.Code
                                 }
                             })
                             {
-                                Name = Common.Utils.BgContainerName,
+                                Name = Const.BgContainerName,
                             },
 
                             new SurfaceContainer(new Collection<BaseItem>
                             {
-                                new ImageItem(new FileInfo(HostingEnvironment.MapPath("~/assets/images/spaceman.pdf")),
+                                new ImageItem(
+                                    new FileInfo(HostingEnvironment.MapPath("~/assets/images/spaceman.pdf")),
                                     location: new PointF(printAreaX + 60, printAreaY + 92),
                                     width: 338,
                                     height: 442)
                             })
                             {
-                                Name = Utils.MainContainerName
+                                Name = Const.MainContainerName
                             }
 
                         },
@@ -191,7 +192,7 @@ namespace Aurigma.DesignAtoms.Samples.Code
                         {
                             new MockupContainer(new List<BaseItem>
                                 {
-                                    new ImageItem(new FileInfo(HostingEnvironment.MapPath("~/assets/mockups/white.jpg")))
+                                    new ImageItem(new FileInfo(HostingEnvironment.MapPath("~/assets/mockups/white.jpg")), new PointF(0,0), surfWidth, surfHeight)
                                 })
                         })
                     }

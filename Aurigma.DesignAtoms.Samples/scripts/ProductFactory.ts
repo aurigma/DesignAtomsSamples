@@ -1,8 +1,9 @@
-﻿import { Product, Surface, PrintArea, SurfaceContainer, MockupContainer, SafetyLine, PdfBox } from "@aurigma/design-atoms/Model/Product";
-import { RectangleF, PointF } from "@aurigma/design-atoms/Math";
-import { RgbColor } from "@aurigma/design-atoms/Colors";
-import { BaseTextItem, PlainTextItem, BoundedTextItem, ImageItem, TextAlignment } from "@aurigma/design-atoms/Model/Product/Items";
-import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
+﻿import { Product, Surface, PrintArea, SurfaceContainer, MockupContainer, SafetyLine, PdfBox } from "@aurigma/design-atoms-model/Product";
+import { RectangleF, PointF } from "@aurigma/design-atoms-model/Math";
+import { RgbColor } from "@aurigma/design-atoms-model/Colors";
+import { BaseTextItem, PlainTextItem, BoundedTextItem, ImageItem, TextAlignment } from "@aurigma/design-atoms-model/Product/Items";
+import { assignProperties } from "@aurigma/design-atoms-model/Utils/Utils";
+import { Margin } from "@aurigma/design-atoms-model/Math/Margin";
 
 export class ProductFactory {
     static createProduct(backendUrl: string) {
@@ -18,7 +19,7 @@ export class ProductFactory {
         const printArea = new PrintArea(new RectangleF(36, 36, 420, 595));
 
         printArea.safetyLines.add(assignProperties(new SafetyLine(), {
-            margin: { left: 5, top: 10, right: 15, bottom: 20 },
+            margin: new Margin({ left: 5, top: 10, right: 15, bottom: 20 }),
             pdfBox: PdfBox.Trim,
             altColor: new RgbColor("green")
         })

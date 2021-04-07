@@ -1,4 +1,5 @@
-﻿import { BaseTextItemHandler, OpenTypeFeature } from "@aurigma/design-atoms/ItemHandlers/BaseTextItemHandler";
+﻿import { BaseTextItemHandler } from "@aurigma/design-atoms/ItemHandlers";
+import { OpenTypeFeature } from "@aurigma/design-atoms-model/Product/Items/OpenTypeFeature";
 import { Helper, backendUrl } from "../../scripts";
 
 const holderElementId = "#viewer";

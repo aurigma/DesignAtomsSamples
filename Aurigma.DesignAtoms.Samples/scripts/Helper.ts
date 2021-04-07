@@ -1,11 +1,11 @@
 ﻿import { Viewer } from "@aurigma/design-atoms/Viewer/Viewer";
-import { ImageItem, BaseTextItem } from "@aurigma/design-atoms/Model/Product/Items";
+import { ImageItem, BaseTextItem } from "@aurigma/design-atoms-model/Product/Items";
 import { Canvas } from "@aurigma/design-atoms/Canvas";
-import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Serializer/JsonProductSerializer";
-import { RectangleF } from "@aurigma/design-atoms/Math";
-import { RgbColor } from "@aurigma/design-atoms/Colors";
-import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
-import { Product, MockupContainer, Surface } from "@aurigma/design-atoms/Model/Product";
+import { JsonProductSerializer } from "@aurigma/design-atoms-model/Product/Serializer/JsonProductSerializer";
+import { RectangleF } from "@aurigma/design-atoms-model/Math";
+import { RgbColor } from "@aurigma/design-atoms-model/Colors";
+import { assignProperties } from "@aurigma/design-atoms-model/Utils/Utils";
+import { Product, MockupContainer, Surface } from "@aurigma/design-atoms-model/Product";
 
 function downloadUrl(url, file) {
     let link = document.createElement("a");

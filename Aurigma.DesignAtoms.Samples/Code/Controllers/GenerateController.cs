@@ -51,7 +51,7 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
                                 
                             })
                             {
-                                Name = Utils.MainContainerName
+                                Name = Const.MainContainerName
                             }
                         }
                     }

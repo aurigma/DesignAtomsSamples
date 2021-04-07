@@ -1,5 +1,6 @@
 ﻿using Aurigma.DesignAtoms.Canvas;
 using Aurigma.DesignAtoms.Canvas.ItemHandlers;
+using Aurigma.DesignAtoms.Common;
 using Aurigma.DesignAtoms.Configuration;
 using Aurigma.DesignAtoms.Model;
 using Aurigma.DesignAtoms.Model.Items;
@@ -39,7 +40,7 @@ namespace Aurigma.DesignAtoms.Samples.Code.Controllers
         public HttpResponseMessage Color([FromBody] ColorRequestData data)
         {
             var product = data.Product;
-            var color = Common.Utils.ParseWebColor(data.Color);
+            var color = ColorUtils.ParseWebColor(data.Color);
 
             var bgItem = product.Surfaces.First().BgContainer.Items[0] as PlaceholderItem;
             bgItem.FillColor = color;

@@ -1,11 +1,11 @@
 ﻿import { Viewer } from "@aurigma/design-atoms/Viewer/Viewer";
-import { Product, Surface, PrintArea, SurfaceContainer, MockupContainer } from "@aurigma/design-atoms/Model/Product";
-import { RectangleF, PointF } from "@aurigma/design-atoms/Math";
-import { JsonProductSerializer } from "@aurigma/design-atoms/Model/Product/Serializer/JsonProductSerializer";
+import { Product, Surface, PrintArea, SurfaceContainer, MockupContainer } from "@aurigma/design-atoms-model/Product";
+import { RectangleF, PointF } from "@aurigma/design-atoms-model/Math";
+import { JsonProductSerializer } from "@aurigma/design-atoms-model/Product/Serializer/JsonProductSerializer";
 import { ItemHandler } from "@aurigma/design-atoms/ItemHandlers";
-import { RgbColor } from "@aurigma/design-atoms/Colors";
-import { BaseItem, BaseTextItem, PlainTextItem, BoundedTextItem, ImageItem, TextAlignment } from "@aurigma/design-atoms/Model/Product/Items";
-import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
+import { RgbColor } from "@aurigma/design-atoms-model/Colors";
+import { BaseItem, BaseTextItem, PlainTextItem, BoundedTextItem, ImageItem, TextAlignment } from "@aurigma/design-atoms-model/Product/Items";
+import { assignProperties } from "@aurigma/design-atoms-model/Utils/Utils";
 import { Helper, backendUrl } from "../../scripts";
 
 const holderElementId = "#viewer";
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     viewer.surface = product.surfaces.get(0);
 
     const itemsCopy = new Map<string, BaseItem>();
-    
+
     (<any>window).designAtoms = {
         viewer: viewer,
         itemsCopy: itemsCopy,
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("add-text")
         .addEventListener("click", () =>
             viewer.surface
-            .containers.get(0)
+                .containers.get(0)
                 .items.add(assignProperties(new BoundedTextItem(), {
                     name: "New Text",
                     textRectangle: new RectangleF(94.8, 372.15, 301.5, 197.1),
@@ -54,10 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     font: new BaseTextItem.FontSettings("Montserrat-Regular", 14),
                     alignment: TextAlignment.Left,
                     locked: false
-            })));
+                })));
 });
 
-function onSelectedItemsChanged(handler: ItemHandler) {
+function onSelectedItemsChanged(canvas, handler: ItemHandler) {
     const viewer: Viewer = (<any>window).designAtoms.viewer;
     const logger: Logger = (<any>window).designAtoms.logger;
     const selectedItems = viewer.selectedItems;
@@ -82,7 +82,7 @@ function onSelectedItemsChanged(handler: ItemHandler) {
 function onItemPropertyChanged(sender: ItemHandler, property: string) {
     const itemsCopy: Map<string, BaseItem[]> = (<any>window).designAtoms.itemsCopy;
     const logger: Logger = (<any>window).designAtoms.logger;
-    
+
     const changedProperty = sender.item[property];
     let oldValue = itemsCopy.get(sender.item.id)[property];
     let newValue = changedProperty;
@@ -197,7 +197,7 @@ class TextEditor {
         this._textElement.value = textItem.text;
         this._colorElement.value = textItem.color.preview;
         this._sizeElement.value = textItem.font.size.toString();
-        
+
         for (let i = 0; i < this._fontsElement.length; i++) {
             if (this._fontsElement.options[i].value === textItem.font.postScriptName)
                 this._fontsElement.selectedIndex = i;

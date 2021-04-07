@@ -1,7 +1,7 @@
-﻿import { RectangleF, Path } from "@aurigma/design-atoms/Math";
-import { Product, Surface, PrintArea, SurfaceContainer } from "@aurigma/design-atoms/Model/Product";
-import { CurvedTextItem } from "@aurigma/design-atoms/Model/Product/Items";
-import { assignProperties } from "@aurigma/design-atoms/Utils/Utils";
+﻿import { RectangleF, Path } from "@aurigma/design-atoms-model/Math";
+import { Product, Surface, PrintArea, SurfaceContainer } from "@aurigma/design-atoms-model/Product";
+import { CurvedTextItem } from "@aurigma/design-atoms-model/Product/Items";
+import { assignProperties } from "@aurigma/design-atoms-model/Utils/Utils";
 import { Helper, backendUrl } from "../../scripts";
 
 const holderElementId = "#viewer";
@@ -40,7 +40,18 @@ function createProduct() {
 
     const mainContainer = assignProperties(new SurfaceContainer(), { name: "main" });
     mainContainer.items.add(new CurvedTextItem("Click \"Load from Server\" to fetch a product from server", Path.ellipse(50, 50, 120, 120), "ArialMT", 14));
-    mainContainer.items.add(new CurvedTextItem("<p><span style=\"color:blue\">Click </span><span style=\"color:red\">\"Load from Server\" </span><span>to fetch a product from server</span></p>", Path.ellipse(240, 50, 80, 140), "ArialMT", 14));
+
+    var richTextCurvedText =
+        new CurvedTextItem(
+            "<p><span style=\"color:rgb(0,0,255)\">Click </span><span style=\"color:rgb(255,0,0)\">\"Load from Server\" </span><span>to fetch a product from server</span></p>",
+            Path.ellipse(240, 50, 80, 140),
+            "ArialMT",
+            14);
+
+    richTextCurvedText.isRichText = true;
+    mainContainer.items.add(richTextCurvedText);
+
+
     const surface = product.surfaces.get(0);
 
     surface.width = 400;

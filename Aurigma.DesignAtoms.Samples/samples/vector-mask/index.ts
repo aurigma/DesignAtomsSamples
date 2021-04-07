@@ -1,6 +1,6 @@
-﻿import { Path } from "@aurigma/design-atoms/Math";
-import { ItemMask } from "@aurigma/design-atoms/Model/Product";
-import { ShapeItem } from "@aurigma/design-atoms/Model/Product/Items";
+﻿import { Path } from "@aurigma/design-atoms-model/Math";
+import { ItemMask } from "@aurigma/design-atoms-model/Product";
+import { ShapeItem } from "@aurigma/design-atoms-model/Product/Items";
 import { Helper, backendUrl } from "../../scripts";
 
 const holderElementId = "#viewer";
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (selectedHandlers == null || selectedHandlers.get(0).item.mask == null)
                 return;
 
-            selectedHandlers.get(0).item.mask.vectorMask = null
+            selectedHandlers.get(0).item.mask.vectorMask = null;
         });
 
     // Load product from server

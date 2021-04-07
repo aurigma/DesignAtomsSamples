@@ -1,7 +1,7 @@
 {
   "name": "@aurigma/design-atoms-samples",
   "private": true,
-  "version": "5.12.1",
+  "version": "5.34.5",
   "description": "Samples for the Design Atoms Framework",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,8 @@
     "serialize-javascript": ">=3.1.0"
   },
   "dependencies": {
-    "@aurigma/design-atoms": "5.21.0"
+    "@aurigma/design-atoms": "5.35.4",
+    "@aurigma/design-atoms-model": "5.33.1"
   },
   "-vs-binding": {
     "AfterBuild": [

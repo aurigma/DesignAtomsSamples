@@ -1,5 +1,5 @@
 import { ImageItemHandler } from "@aurigma/design-atoms/ItemHandlers/ImageItemHandler";
-import { ImageItem } from "@aurigma/design-atoms/Model/Product/Items/ImageItem";
+import { ImageItem } from "@aurigma/design-atoms-model/Product/Items/ImageItem";
 
 export async function loadImage(imgItem: ImageItem, url: string): Promise<string> {
     const handler = window.designAtoms.viewer.getHandler<ImageItemHandler>(imgItem);
