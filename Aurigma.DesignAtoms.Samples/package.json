@@ -15,7 +15,7 @@
     "fs": "0.0.1-security",
     "http-server": "^0.11.1",
     "mixin-deep": "^2.0.1",
-    "set-value": ">=2.0.1",
+    "set-value": ">=4.0.1",
     "ts-loader": "^6.2.1",
     "typescript": "3.0.1",
     "webpack": "^4.41.5",
